@@ -146,6 +146,7 @@ public class DataXML {
     public String archivo_destino;
     public String archivo_complemento;
     public ArrayList<Dato> aDatos;
+    
     /**
      * Poligono arbitrario
      */
@@ -156,6 +157,10 @@ public class DataXML {
      */
     public int indfiltro;
     
+    /**
+     * Indicador se el filtro es alfanumerico
+     */
+    public boolean besalfan;
     
     /**
      * Indice para el filtrado de la segunda capa
@@ -284,6 +289,8 @@ public class DataXML {
         
         this.indfiltro=-1;
         this.indfiltro2=-1;
+        
+        this.besalfan=false;
         
         this.ancholin=0.25;
 

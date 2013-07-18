@@ -54,9 +54,16 @@ public class Dato {
      * Coordenada Norte o latitud
      */
     public double norte;
+    
+    
     public String srotulo;
     public String srotulo1;
     public String srotulo2;
+    
+    /**
+     * Id de identificacion puede ser alfanumerico 
+     */
+    public String sid;
 
     /**
      * 
@@ -86,6 +93,18 @@ public class Dato {
     public Dato(double este, double norte, float valor, int marca) {
         this.este = este;
         this.norte = norte;
+        this.valor = valor;
+        this.marca = marca;
+        rango=marca;
+    }
+    
+    /**
+     * 
+     * @param sid
+     * @param valor
+     * @param marca 
+     */
+    public Dato(String sid, float valor, int marca){
         this.valor = valor;
         this.marca = marca;
         rango=marca;

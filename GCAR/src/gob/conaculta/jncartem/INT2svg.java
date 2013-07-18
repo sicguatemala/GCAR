@@ -46,17 +46,21 @@ public class INT2svg {
         }
 
         //lee datos en tablas
-        if (midxml.alcance_tipo == Const.CONCENTRACION1
-                || midxml.alcance_tipo == Const.CONCENTRACION2) {
+        if (!midxml.besalfan && (midxml.alcance_tipo == Const.CONCENTRACION1
+                || midxml.alcance_tipo == Const.CONCENTRACION2)) {
 
             LectorPC miLecPC = new LectorPC(midxml.archivo_origen, midxml.aDatos);
             miLecPC.leeDatos();
 
-        } else if (midxml.alcance_tipo == Const.NIVEL_UNICO
-                || midxml.alcance_tipo == Const.CAPAS2 || midxml.alcance_tipo == Const.CAPAPOLI) {
+        } else if (!midxml.besalfan && (midxml.alcance_tipo == Const.NIVEL_UNICO
+                || midxml.alcance_tipo == Const.CAPAS2 || midxml.alcance_tipo == Const.CAPAPOLI)) {
 
             LectorData miLecD = new LectorData(midxml.archivo_origen, midxml.aDatos, midxml.alcance_ce, midxml.alcance_tipo);
             miLecD.leeDatos();
+        } else if (midxml.alcance_tipo == Const.NIVEL_UNICO && midxml.besalfan) {
+
+            LectorDataG miLecDG = new LectorDataG(midxml.archivo_origen, midxml.aDatos);
+            miLecDG.leeDatos();
         }
 
 

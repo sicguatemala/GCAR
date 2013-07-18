@@ -154,7 +154,14 @@ public class LectorDXML {
                 dxml.bscript = true;
             }
 
-        } else if (qName.equals("dir_loc")) {
+        } else if (qName.equals("besalfan")) {
+
+            if(attrs[0].getValue().equals("1")){
+                dxml.besalfan=true;
+            }
+
+
+        }else if (qName.equals("dir_loc")) {
 
             dxml.sdirLoc = checaDirsH(attrs[0].getValue());
 
