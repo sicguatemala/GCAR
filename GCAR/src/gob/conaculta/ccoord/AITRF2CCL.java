@@ -39,6 +39,9 @@ public class AITRF2CCL {
     private double E;
     private double N;
 
+    /**
+     * 
+     */
     public AITRF2CCL() {
 
 

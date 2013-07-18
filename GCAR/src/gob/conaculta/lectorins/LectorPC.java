@@ -76,13 +76,9 @@ public class LectorPC {
 
         } catch (FileNotFoundException fnfex) {
 
-            System.out.println(fnfex);
-            fnfex.printStackTrace();
-
         } catch (IOException ioex) {
 
-            System.out.println(ioex);
-            ioex.printStackTrace();
+         
 
         }
 

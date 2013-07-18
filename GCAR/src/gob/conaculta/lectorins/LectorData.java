@@ -107,13 +107,11 @@ public class LectorData {
 
         } catch (FileNotFoundException fnfex) {
 
-            System.out.println(fnfex);
-            fnfex.printStackTrace();
+            
 
         } catch (IOException ioex) {
 
-            System.out.println(ioex);
-            ioex.printStackTrace();
+            
 
         }
 
@@ -385,9 +383,7 @@ public class LectorData {
 
         } catch (NumberFormatException nfex) {
 
-            System.out.println(spar);
-
-            nfex.printStackTrace();
+           
 
         }
 
