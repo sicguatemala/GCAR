@@ -29,9 +29,9 @@ public class AreasPolA extends DibSVGG {
         super(dxml, bca);
 
         this.dxml = dxml;
-        
-        suidpol=1;
-        
+
+        suidpol = 1;
+
         this.escalaPoligonos(midxml.aPA);
     }
 
@@ -85,16 +85,23 @@ public class AreasPolA extends DibSVGG {
         //String suidpol = (pola.sdatos.get(midxml.indfiltro)).trim();
         String strans = "";
 
-        Double dnivel = Double.parseDouble((pola.sdatos.get(midxml.indfiltro)).trim());
 
+        Colorc color = null;
+        Double dnivel=new Double(0.0);
+        if (midxml.besalfan) {
+            int icolor=midxml.obtenRango((pola.sdatos.get(midxml.indfiltro)).trim());
+            color = midxml.rango2color(icolor);
+          
+        } else {
+            dnivel = Double.parseDouble((pola.sdatos.get(midxml.indfiltro)).trim());
+            int icolor = midxml.obtenRango(dxml.alcance_ce, dnivel.intValue());
+            color = midxml.rango2color(icolor);
+        }
 
-        int icolor = midxml.obtenRango(dxml.alcance_ce, dnivel.intValue());
-
-        Colorc color = midxml.rango2color(icolor);
 
         String satteve = "";
         if (midxml.bscript) {
-            satteve = this.genAttEve(pola, dnivel,suidpol);
+            satteve = this.genAttEve(pola, dnivel, suidpol);
         }
 
         fbwp.write("<polygon  " + satteve);
@@ -143,7 +150,7 @@ public class AreasPolA extends DibSVGG {
         }
 
         fbwp.write("\"/>");
-        
+
         this.suidpol++;
     }
 
@@ -203,20 +210,20 @@ public class AreasPolA extends DibSVGG {
      * @param pola
      * @return String que contiene la bandera
      */
-    private String genAttEve(PoligonoA pola, Double dnivel,int sid) {
+    private String genAttEve(PoligonoA pola, Double dnivel, int sid) {
         String sbuff = "";
 
         String bandera = "";
 
         float valor = midxml.obtenValor(dxml.alcance_ce, dnivel.intValue());
 
-        if (valor > 0 || valor<0) {
+        if (valor > 0 || valor < 0) {
             bandera = midxml.obtenNombre(dxml.alcance_ce, dnivel.intValue()) + " (" + this.formateaValor(valor) + ")";
         } else {
             bandera = midxml.obtenNombre(dxml.alcance_ce, dnivel.intValue());
         }
 
-        sbuff += " onmouseover=\"muestraToolTip(evt,'" + bandera + "','i"+sid+"')\" onmouseout=\"ocultaToolTip(evt)\"";
+        sbuff += " onmouseover=\"muestraToolTip(evt,'" + bandera + "','i" + sid + "')\" onmouseout=\"ocultaToolTip(evt)\"";
 
         if (valor > 0) {
             switch (midxml.subtipom) {

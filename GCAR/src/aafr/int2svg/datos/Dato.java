@@ -105,6 +105,7 @@ public class Dato {
      * @param marca 
      */
     public Dato(String sid, float valor, int marca){
+       this.sid=sid;
         this.valor = valor;
         this.marca = marca;
         rango=marca;

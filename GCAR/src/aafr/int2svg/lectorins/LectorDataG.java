@@ -4,7 +4,7 @@
  */
 package aafr.int2svg.lectorins;
 
-import aafr.int2svg.ccoord.Ang2CCL;
+
 import aafr.int2svg.datos.Dato;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -46,9 +46,6 @@ public class LectorDataG {
         this.snomarch = snomarch;
 
         this.aD = aD;
-
-
-
 
 
         if (snomarch != null) {

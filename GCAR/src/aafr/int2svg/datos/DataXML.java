@@ -446,6 +446,25 @@ public class DataXML {
 
     }
     
+    /**
+     * 
+     * @param sid
+     * @return 
+     */
+   public int obtenRango(String sid){
+        int vtam = aDatos.size();
+        for (int i = 0; i < vtam; i++) {
+
+            Dato dat = aDatos.get(i);
+            
+            if(dat.sid.equals(sid)){
+                return dat.rango;
+            }
+                                   
+        }
+        
+        return -1;
+   }
     
     /**
      * 

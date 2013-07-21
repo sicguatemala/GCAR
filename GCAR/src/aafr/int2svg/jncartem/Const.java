@@ -5,7 +5,7 @@ import aafr.int2svg.datos.Colorc;
 
 /**
  * Clase que define unas constantes comunes a todo el desarrollo
- * @author alfonso
+ * @author AAFR
  */
 public class Const {
 
@@ -27,7 +27,7 @@ public class Const {
 /**
  * 
  */
-    public static final String DIRBASE=new String("/home/alfonso/NetBeansProjects/ARTEOAX/gcar/");
+    public static final String DIRBASE=new String("/home/alfonso/NetBeansProjects/SICLA2/fase2/gcarto/");
     
 
     
