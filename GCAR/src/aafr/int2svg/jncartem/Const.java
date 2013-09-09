@@ -27,7 +27,7 @@ public class Const {
 /**
  * 
  */
-    public static final String DIRBASE=new String("/home/alfonso/NetBeansProjects/SICLA2/fase2/gcarto/");
+    public static final String DIRBASE=new String("");
     
 
     

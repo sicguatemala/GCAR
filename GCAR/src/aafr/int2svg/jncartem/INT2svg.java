@@ -22,21 +22,21 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * Clase principal que construye un mapa en algun formato
+ * Clase principal que construye un mapa en algún formato
  *
  * @author alfonso
  */
 public class INT2svg {
 
     /**
-     * Instancia a la configuracion del XML para este pintado
+     * Instancia a la configuración del XML para este pintado
      */
     public DataXML midxml;
 
     /**
      * Crea una instancia nueva de INT2raster
      *
-     * @param scmd Paramaetros comas o por pipes
+     * @param scmd Parámetros comas o por pipes
      */
     public INT2svg(String[] scmd) {
 
@@ -138,7 +138,7 @@ public class INT2svg {
     }
 
     /**
-     * Metodo principal que arranca la aplicacion
+     * Método principal que arranca la aplicación
      *
      * @param sargs Array de strings con los argumentos para el trabajo de
      * pintado

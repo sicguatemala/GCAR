@@ -83,6 +83,7 @@ public class DibSVGG extends ORIndeG2 {
         try {
 
             fp = new File(midxml.archivo_destino);
+            System.out.println(midxml.archivo_destino);
             fbwp = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fp), "UTF-8"));
            // fbwp = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fp)));
 
