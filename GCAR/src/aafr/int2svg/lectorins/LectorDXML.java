@@ -156,7 +156,7 @@ public class LectorDXML {
 
         } else if (qName.equals("besalfan")) {
 
-            if(attrs[0].getValue().equals("1")){
+            if(attrs[0].getValue().equals("t")){
                 dxml.besalfan=true;
             }
 
