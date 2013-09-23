@@ -61,12 +61,17 @@ public class INT2svg {
             LectorPC miLecPC = new LectorPC(midxml.archivo_origen, midxml.aDatos);
             miLecPC.leeDatos();
 
-        } else if (!midxml.besalfan && (midxml.alcance_tipo == Const.NIVEL_UNICO
-                || midxml.alcance_tipo == Const.CAPAS2 || midxml.alcance_tipo == Const.CAPAPOLI)) {
-
-            LectorData miLecD = new LectorData(midxml.archivo_origen, midxml.aDatos, midxml.alcance_ce, midxml.alcance_tipo);
-            miLecD.leeDatos();
-        } else if (midxml.alcance_tipo == Const.NIVEL_UNICO) {
+        } 
+        
+        
+//        else if (!midxml.besalfan && (midxml.alcance_tipo == Const.NIVEL_UNICO
+//                || midxml.alcance_tipo == Const.CAPAS2 || midxml.alcance_tipo == Const.CAPAPOLI)) {
+//
+//            LectorData miLecD = new LectorData(midxml.archivo_origen, midxml.aDatos, midxml.alcance_ce, midxml.alcance_tipo);
+//            miLecD.leeDatos();
+//        } 
+//        
+        else if (midxml.alcance_tipo == Const.NIVEL_UNICO) {
             if (midxml.besalfan) {
                 LectorDataGA miLecDG = new LectorDataGA(midxml.archivo_origen, midxml.aDatos);
                 miLecDG.leeDatos();
