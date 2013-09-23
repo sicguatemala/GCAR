@@ -12,11 +12,12 @@ import aafr.int2svg.render.svg.AreasPolAM;
 import aafr.int2svg.render.svg.AreasPolig;
 import aafr.int2svg.lectorint.LectorINTA;
 import aafr.int2svg.lectorins.LectorDXML;
-import aafr.int2svg.lectorins.LectorDataG;
+import aafr.int2svg.lectorins.LectorDataGA;
 import aafr.int2svg.lectorins.LectorRotulos;
 import aafr.int2svg.lectorins.LectorData;
 import aafr.int2svg.lectorins.LectorPC;
 import aafr.int2svg.datos.DataXML;
+import aafr.int2svg.lectorins.LectorDataGN;
 import aafr.int2svg.objcarto.PoligonoA;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -65,10 +66,14 @@ public class INT2svg {
 
             LectorData miLecD = new LectorData(midxml.archivo_origen, midxml.aDatos, midxml.alcance_ce, midxml.alcance_tipo);
             miLecD.leeDatos();
-        } else if (midxml.alcance_tipo == Const.NIVEL_UNICO && midxml.besalfan) {
-
-            LectorDataG miLecDG = new LectorDataG(midxml.archivo_origen, midxml.aDatos);
-            miLecDG.leeDatos();
+        } else if (midxml.alcance_tipo == Const.NIVEL_UNICO) {
+            if (midxml.besalfan) {
+                LectorDataGA miLecDG = new LectorDataGA(midxml.archivo_origen, midxml.aDatos);
+                miLecDG.leeDatos();
+            } else {
+                LectorDataGN miLecDG = new LectorDataGN(midxml.archivo_origen, midxml.aDatos);
+                miLecDG.leeDatos();
+            }
         }
 
 

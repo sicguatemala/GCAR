@@ -9,7 +9,7 @@ package aafr.int2svg.datos;
 import java.awt.Color;
 /**
  * Clase que define un objeto de color que pertenece a cierto rango y tiene una descripción
- * @author alfonso
+ * @author AAFR
  */
 public class Colorc extends Color{
     /**

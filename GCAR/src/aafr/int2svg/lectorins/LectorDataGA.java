@@ -17,20 +17,20 @@ import java.util.StringTokenizer;
  *
  * @author alfonso
  */
-public class LectorDataG {
+public class LectorDataGA {
 
     /**
      * Nombre del archivo
      */
     private String snomarch;
     /**
-     * Objeto tipo File del archiv que se esta recuperando
+     * Objeto tipo File del archivo que se esta recuperando
      */
     private File farch;
     /**
      * Vector de Datos
      */
-    private ArrayList<Dato> aD;
+    protected ArrayList<Dato> aD;
 
     /**
      * Crea una instancia de Lectorins
@@ -41,7 +41,7 @@ public class LectorDataG {
      * @param alcance_tipo
      *
      */
-    public LectorDataG(String snomarch, ArrayList<Dato> aD) {
+    public LectorDataGA(String snomarch, ArrayList<Dato> aD) {
 
         this.snomarch = snomarch;
 
@@ -107,7 +107,7 @@ public class LectorDataG {
 
     /**
      *
-     * Metodo que parsea un archivo de 5 componentes
+     * Método que parsea un archivo de 3 componentes uno de ellos es un identificador de caracteres
      *
      * @param spar Cadena a parsear
      * @return Regresa la cantidad de tokens parseados
