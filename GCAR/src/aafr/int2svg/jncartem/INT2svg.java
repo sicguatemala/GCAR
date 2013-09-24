@@ -14,7 +14,6 @@ import aafr.int2svg.lectorint.LectorINTA;
 import aafr.int2svg.lectorins.LectorDXML;
 import aafr.int2svg.lectorins.LectorDataGA;
 import aafr.int2svg.lectorins.LectorRotulos;
-import aafr.int2svg.lectorins.LectorData;
 import aafr.int2svg.lectorins.LectorPC;
 import aafr.int2svg.datos.DataXML;
 import aafr.int2svg.lectorins.LectorDataGN;
