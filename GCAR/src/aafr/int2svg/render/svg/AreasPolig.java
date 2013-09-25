@@ -82,8 +82,6 @@ public class AreasPolig extends AreasPolAM {
 
             i++;
 
-
-
         }
 
         fbwp.write(" \"/>");
@@ -111,9 +109,7 @@ public class AreasPolig extends AreasPolAM {
         
         fbwp.write("<polyline ");
         fbwp.write("stroke=\"rgb(" + color + ")\" stroke-width=\"1\" stroke-linejoin=\"round\" fill=\"none\" " + strans);
-
         fbwp.write(" id=\"i" + i + "\"");
-
         fbwp.write(" points=\"");
 
         

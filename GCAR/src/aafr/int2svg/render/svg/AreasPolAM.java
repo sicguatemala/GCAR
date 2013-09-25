@@ -190,7 +190,7 @@ public class AreasPolAM extends DibSVGG {
      */
     private void pintaPoligonoCapa(PoligonoA pola, double dtrans, int icapa) throws IOException {
 
-        Colorc color = null;
+        Colorc color;
 
         String strans = "fill-opacity=\"" + dtrans + "\" stroke-opacity=\"" + dtrans + "\"";
 

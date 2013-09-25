@@ -5,8 +5,8 @@ import java.awt.geom.Rectangle2D;
 import java.util.Comparator;
 
 /**
- *
- * @author alfonso
+ * Clase que ordena a los polígonos de mayor a menor para el pintado 
+ * @author AAFR <alffore@gmail.com>
  */
 public class COrdenaPolA implements Comparator<PoligonoA> {
 

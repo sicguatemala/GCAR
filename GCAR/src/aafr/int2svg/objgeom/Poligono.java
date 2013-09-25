@@ -9,11 +9,8 @@ import aafr.int2svg.datos.Colorc;
 import java.awt.Polygon;
 
 /**
-
  *
-
- * @author alfonso
-
+ * @author AAFR <alffore@gmail.com
  */
 public class Poligono extends Polygon {
 
@@ -22,7 +19,7 @@ public class Poligono extends Polygon {
     public int mag;
 
     /**
-     * Crea una nueva instancia de Poligono
+     * Crea una nueva instancia de Polígono
      * @param x 
      * @param y 
      * @param nump 
