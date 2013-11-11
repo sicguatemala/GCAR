@@ -93,7 +93,7 @@ public class ConcentraRecG extends DibSVGG {
 
 
         Colorc colorc = this.obtenColorContorno();
-        if (!colorc.equals(Const.COLINDEFINIDO)) {
+        if (!colorc.equals(Const.COLINDEFINIDO_SISTEMA)) {
             fbwp.write(" stroke=\"rgb(" + colorc + ")\" ");
         } else {
             fbwp.write(" stroke=\"" + midxml.scfondo + "\" ");

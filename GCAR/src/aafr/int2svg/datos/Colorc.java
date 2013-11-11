@@ -13,7 +13,7 @@ import java.awt.Color;
  */
 public class Colorc extends Color{
     /**
-     * Descripcion o nombre del color
+     * Descripción o nombre del color
      */
     public String snomd;
     

@@ -127,6 +127,11 @@ public class DataXML {
      * String de color de fondo por default de poligonos
      */
     public String scfondo;
+    
+    /**
+     * String de color No Disponible (ND)
+     */
+    public String scnd;
     /**
      *
      * Nombre del archivo de Municipios (nomenclatura)
@@ -305,10 +310,10 @@ public class DataXML {
      * Metodo que inserta un color en la paleta
      *
      * @param rango Rango del color
-     * @param r Componenete <B>R</B> del color
-     * @param g Componenete <B>G</B> del color
-     * @param b Componenete <B>B</B> del color
-     * @param sdes Descripcion del color
+     * @param r Componente <B>R</B> del color
+     * @param g Componente <B>G</B> del color
+     * @param b Componente <B>B</B> del color
+     * @param sdes Descripción del color
      */
     public void ponColor(int r, int g, int b, String sdes, int rango) {
 
@@ -318,7 +323,7 @@ public class DataXML {
 
     /**
      *
-     * Metodo que obtiene el color segun el rango proporcionado
+     * Método que obtiene el color según el rango proporcionado
      *
      * @param rango
      * @return
@@ -337,7 +342,7 @@ public class DataXML {
 
         }
 
-        return Const.COLINDEFINIDO;
+        return Const.COLINDEFINIDO_SISTEMA;
 
     }
     
@@ -353,7 +358,7 @@ public class DataXML {
             }
         }
         
-        return Const.COLINDEFINIDO.toString();
+        return Const.COLINDEFINIDO_SISTEMA.toString();
     }
     
     
@@ -403,7 +408,7 @@ public class DataXML {
 
         }
 
-        return Const.COLINDEFINIDO;
+        return Const.COLINDEFINIDO_SISTEMA;
     }
 
     /**
@@ -472,7 +477,7 @@ public class DataXML {
      * @param cm
      * @return 
      */
-       public float obtenValor(int ce, int cm) {
+       public double obtenValor(int ce, int cm) {
 
         
 

@@ -34,5 +34,5 @@ public class Const {
     /**
      * Color indefinido
      */
-    public static final Colorc COLINDEFINIDO = new Colorc(209, 209, 209, "INDEFINIDO", -1);
+    public static final Colorc COLINDEFINIDO_SISTEMA = new Colorc(209, 209, 209, "INDEFINIDO", -1);
 }

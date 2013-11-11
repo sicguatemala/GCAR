@@ -50,7 +50,6 @@ public class LectorDXML {
 
             boolean sigueParsing = true;
 
-
             while (sigueParsing) {
 
                 ParseEvent event = parser.read();
@@ -146,7 +145,7 @@ public class LectorDXML {
 
             dxml.arch_rotulos = checaDirsH(attrs[0].getValue());
 
-        }else if (qName.equals("arch_script")) {
+        } else if (qName.equals("arch_script")) {
 
             dxml.spath_script = checaDirsH(attrs[0].getValue());
 
@@ -156,15 +155,13 @@ public class LectorDXML {
 
         } else if (qName.equals("besalfan")) {
 
-            if(attrs[0].getValue().equals("t")){
-                dxml.besalfan=true;
+            if (attrs[0].getValue().equals("t")) {
+                dxml.besalfan = true;
             }
 
-
-        }else if (qName.equals("dir_loc")) {
+        } else if (qName.equals("dir_loc")) {
 
             dxml.sdirLoc = checaDirsH(attrs[0].getValue());
-
 
         } else if (qName.equals("color_fondo")) {
 
@@ -175,7 +172,16 @@ public class LectorDXML {
                 dxml.ponColor(col.getRed(), col.getGreen(), col.getBlue(), "fondop", -1);
             }
 
-        } else if (qName.equals("tipo_corrd_loc")) {
+        } else if (qName.equals("color_nd")) {
+
+            dxml.scnd = "rgb(" + attrs[0].getValue() + ")";
+
+            if (attrs[0].getValue().length() > 0) {
+                Color col = parseaSColor(attrs[0].getValue());
+                dxml.ponColor(col.getRed(), col.getGreen(), col.getBlue(), "nd", -1000);
+            }
+
+        }else if (qName.equals("tipo_corrd_loc")) {
 
             dxml.sLocCoord = attrs[0].getValue();
 
@@ -200,14 +206,12 @@ public class LectorDXML {
 
             dxml.alrrc.add(rrc);
 
-
-
         } else if (qName.equals("color_contorno")) {
             Color col = null;
             if (attrs[0].getValue().length() > 0) {
                 col = parseaSColor(attrs[0].getValue());
             } else {
-                col = Const.COLINDEFINIDO;
+                col = Const.COLINDEFINIDO_SISTEMA;
             }
 
             dxml.ponColor(col.getRed(), col.getGreen(), col.getBlue(), "contorno", -2);
@@ -217,7 +221,7 @@ public class LectorDXML {
             Color col = parseaSColor(attrs[0].getValue());
             dxml.ponColor(col.getRed(), col.getGreen(), col.getBlue(), "resaltado", -3);
 
-        }  else if (qName.equals("dir_pola")) {
+        } else if (qName.equals("dir_pola")) {
 
             dxml.sdirAI = checaDirsH(attrs[0].getValue());
 
@@ -225,36 +229,29 @@ public class LectorDXML {
 
             dxml.indfiltro = Integer.parseInt(attrs[0].getValue());
 
-
         } else if (qName.equals("indfiltro2") && attrs[0].getValue().length() > 0) {
 
             dxml.indfiltro2 = Integer.parseInt(attrs[0].getValue());
-
 
         } else if (qName.equals("alcance_tipo") && attrs[0].getValue().length() > 0) {
 
             dxml.alcance_tipo = Integer.parseInt(attrs[0].getValue());
 
-
         } else if (qName.equals("alcance_ce") && attrs[0].getValue().length() > 0) {
 
             dxml.alcance_ce = Integer.parseInt(attrs[0].getValue());
-
 
         } else if (qName.equals("alcance_cce") && attrs[0].getValue().length() > 0) {
 
             dxml.alcance_cce = Integer.parseInt(attrs[0].getValue());
 
-
         } else if (qName.equals("alcance_cxloc")) {
 
             dxml.bcenloc = (attrs[0].getValue().equals("t")) ? true : false;
 
-
         } else if (qName.equals("dimx") && attrs[0].getValue().length() > 0) {
 
             dxml.dimx = Integer.parseInt(attrs[0].getValue());
-
 
         } else if (qName.equals("dimy") && attrs[0].getValue().length() > 0) {
 
@@ -307,25 +304,23 @@ public class LectorDXML {
 
             dxml.archivo_complemento = checaDirsH(attrs[0].getValue());
 
-        }else if (qName.equals("bemb")) {
+        } else if (qName.equals("bemb")) {
 
-            dxml.bembebido = (attrs[0].getValue().equalsIgnoreCase("t"))?true:false;
+            dxml.bembebido = (attrs[0].getValue().equalsIgnoreCase("t")) ? true : false;
 
-        }else if (qName.equals("brotulos")) {
+        } else if (qName.equals("brotulos")) {
 
-          dxml.binrotulos = (attrs[0].getValue().equalsIgnoreCase("t"))?true:false;
+            dxml.binrotulos = (attrs[0].getValue().equalsIgnoreCase("t")) ? true : false;
 
-        }else if (qName.equals("subtipom")) {
+        } else if (qName.equals("subtipom")) {
 
-            if(attrs[0].getValue().equalsIgnoreCase("mun")){
+            if (attrs[0].getValue().equalsIgnoreCase("mun")) {
                 dxml.subtipom = Const.MUNICIPAL;
-            }else if(attrs[0].getValue().equalsIgnoreCase("dis")){
+            } else if (attrs[0].getValue().equalsIgnoreCase("dis")) {
                 dxml.subtipom = Const.DISTRITAL;
-            }else if(attrs[0].getValue().equalsIgnoreCase("reg")){
+            } else if (attrs[0].getValue().equalsIgnoreCase("reg")) {
                 dxml.subtipom = Const.REGIONAL;
             }
-            
-            
 
         }
     }
@@ -375,14 +370,12 @@ public class LectorDXML {
 
         double[] daux = new double[stok.countTokens()];
 
-
         int i = 0;
 
         while (stok.hasMoreTokens()) {
             daux[i] = Double.parseDouble(stok.nextToken());
             i++;
         }
-
 
         return daux;
 
@@ -394,7 +387,6 @@ public class LectorDXML {
      * @return
      */
     private String checaDirsH(String sdir) {
-
 
         if (sdir.length() > 0 && sdir.charAt(0) != '/') {
             sdir = Const.DIRBASE + sdir;

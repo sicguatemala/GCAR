@@ -5,21 +5,12 @@
  */
 package aafr.int2svg.jncartem;
 
-import aafr.int2svg.render.svg.ConcentraRecG2;
-import aafr.int2svg.render.svg.AreasPolA;
-import aafr.int2svg.render.svg.ConcentraRecG;
-import aafr.int2svg.render.svg.AreasPolAM;
-import aafr.int2svg.render.svg.AreasPolig;
-import aafr.int2svg.lectorint.LectorINTA;
-import aafr.int2svg.lectorins.LectorDXML;
-import aafr.int2svg.lectorins.LectorDataGA;
-import aafr.int2svg.lectorins.LectorRotulos;
-import aafr.int2svg.lectorins.LectorPC;
+import aafr.int2svg.render.svg.*;
+import aafr.int2svg.lectorint.*;
+import aafr.int2svg.lectorins.*;
 import aafr.int2svg.datos.DataXML;
-import aafr.int2svg.lectorins.LectorDataGN;
 import aafr.int2svg.objcarto.PoligonoA;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 /**
  * Clase principal que construye un mapa en algún formato
@@ -40,14 +31,9 @@ public class INT2svg {
      */
     public INT2svg(String[] scmd) {
 
-
-
-
         //lee documento XML de instrucciones
         midxml = new DataXML();
         LectorDXML lgi = new LectorDXML(scmd[0], midxml);
-
-
 
         if (Const.BDEP) {
             System.out.println(midxml.archivo_origen + " " + midxml.archivo_destino + " " + midxml.alcance_ce);
@@ -60,7 +46,7 @@ public class INT2svg {
             LectorPC miLecPC = new LectorPC(midxml.archivo_origen, midxml.aDatos);
             miLecPC.leeDatos();
 
-        }else if (midxml.alcance_tipo == Const.NIVEL_UNICO) {
+        } else if (midxml.alcance_tipo == Const.NIVEL_UNICO) {
             if (midxml.besalfan) {
                 LectorDataGA miLecDG = new LectorDataGA(midxml.archivo_origen, midxml.aDatos);
                 miLecDG.leeDatos();
@@ -69,7 +55,6 @@ public class INT2svg {
                 miLecDG.leeDatos();
             }
         }
-
 
         //lee rotulos 
         if (midxml.binrotulos) {
@@ -81,27 +66,20 @@ public class INT2svg {
             System.out.println("DEPURACION: alcance_tipo: " + midxml.alcance_tipo);
         }
 
-
         // Lector de Poligonos arbitrarios
         LectorINTA linta = new LectorINTA(midxml);
 
-
-
-
-
+//ordena poligonos del mayor al menor
         OrdenaPoligonosA(midxml.aPA);
-
-
-
 
         midxml.aesp = true;
 
         if (midxml.alcance_tipo == Const.CAPAS2 || midxml.alcance_tipo == Const.CAPAPOLI) {
-            LectorINTA linta2 = new LectorINTA(midxml, midxml.sdirFuente2, midxml.aPA2);
+
+            new LectorINTA(midxml, midxml.sdirFuente2, midxml.aPA2);
             OrdenaPoligonosA(midxml.aPA2);
 
         }
-
 
         if (midxml.alcance_tipo == Const.CONCENTRACION1) {
 
@@ -133,7 +111,6 @@ public class INT2svg {
 
         }
 
-
     }
 
     /**
@@ -145,7 +122,7 @@ public class INT2svg {
     public static void main(String[] sargs) {
 
         //el xml con instrucciones
-        INT2svg i2s = new INT2svg(sargs);
+         new INT2svg(sargs);
 
     }
 
@@ -157,7 +134,6 @@ public class INT2svg {
         if (Const.BDEP) {
             System.out.println("Ordena poligonos Arbitrarios: " + aPA.size());
         }
-
         Collections.sort(aPA, new COrdenaPolA());
     }
 }

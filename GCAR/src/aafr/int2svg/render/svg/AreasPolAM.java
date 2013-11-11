@@ -131,7 +131,7 @@ public class AreasPolAM extends DibSVGG {
 
 
         Colorc colorc = this.obtenColorContorno();
-        if (!colorc.equals(Const.COLINDEFINIDO)) {
+        if (!colorc.equals(Const.COLINDEFINIDO_SISTEMA)) {
             fbwp.write(" stroke=\"rgb(" + colorc + ")\" stroke-linejoin=\"round\" stroke-width=\"" + midxml.ancholin + "\"");
         } else {
             fbwp.write(" stroke=\"rgb(" + color + ")\"  stroke-linejoin=\"round\" stroke-width=\"" + midxml.ancholin + "\"");

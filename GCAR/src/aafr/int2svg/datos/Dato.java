@@ -36,8 +36,10 @@ public class Dato {
      * Radio del circulo en caso de que sea necesario pintar un objeto sobre la localidad 
      */
     public double radio;
-    public float valor;
+    public double valor;
     public int marca;
+    
+    public Boolean bvalor_nd;
     
     
     public String sne;
@@ -73,13 +75,14 @@ public class Dato {
      * @param valor
      * @param marca
      */
-    public Dato(int ce, int cm, int cl, float valor, int marca) {
+    public Dato(int ce, int cm, int cl, double valor, int marca) {
         nivel1_id = ce;
         nivel2_id = cm;
         nivel3_id = cl;
         this.valor = valor;
         this.marca = marca;
         rango = marca;
+        this.bvalor_nd=false;
     }
 
     /**
@@ -90,7 +93,7 @@ public class Dato {
      * @param valor
      * @param marca 
      */
-    public Dato(double este, double norte, float valor, int marca) {
+    public Dato(double este, double norte, double valor, int marca) {
         this.este = este;
         this.norte = norte;
         this.valor = valor;
@@ -104,10 +107,11 @@ public class Dato {
      * @param valor
      * @param marca 
      */
-    public Dato(String sid, float valor, int marca){
+    public Dato(String sid, double valor, int marca){
        this.sid=sid;
         this.valor = valor;
         this.marca = marca;
         rango=marca;
+        this.bvalor_nd=false;
     }
 }

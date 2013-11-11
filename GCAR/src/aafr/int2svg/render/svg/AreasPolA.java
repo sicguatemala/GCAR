@@ -110,7 +110,7 @@ public class AreasPolA extends DibSVGG {
         fbwp.write(" fill=\"rgb(" + color + ")\" fill-rule=\"nonzero\" " + strans);
 
         Colorc colorc = this.obtenColorContorno();
-        if (colorc.equals(Const.COLINDEFINIDO)) {
+        if (colorc.equals(Const.COLINDEFINIDO_SISTEMA)) {
             fbwp.write(" stroke=\"rgb(" + color + ")\" stroke-linejoin=\"round\" stroke-width=\"" + midxml.ancholin + "\"");
         } else {
             fbwp.write(" stroke=\"rgb(" + colorc + ")\"  stroke-linejoin=\"round\" stroke-width=\"" + midxml.ancholin + "\"");
@@ -217,7 +217,7 @@ public class AreasPolA extends DibSVGG {
 
         String bandera = "";
 
-        float valor = midxml.obtenValor(dxml.alcance_ce, dnivel.intValue());
+        double valor = midxml.obtenValor(dxml.alcance_ce, dnivel.intValue());
 
         if (valor > 0 || valor < 0) {
             bandera = midxml.obtenNombre(dxml.alcance_ce, dnivel.intValue()) + " (" + this.formateaValor(valor) + ")";
@@ -251,8 +251,8 @@ public class AreasPolA extends DibSVGG {
      * @param valor
      * @return
      */
-    private String formateaValor(float valor) {
-        int valor_e = Math.round(valor);
+    private String formateaValor(double valor) {
+        int valor_e = Math.round((float)valor);
 
         if (valor_e == (int) valor) {
             return (new Integer(valor_e)).toString();

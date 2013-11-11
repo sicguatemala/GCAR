@@ -25,7 +25,7 @@ public class LectorData {
      */
     private String snomarch;
     /**
-     * Objeto tipo File del archiv que se esta recuperando
+     * Objeto tipo File del archivo que se esta recuperando
      */
     private File farch;
     private int cedo;
@@ -37,7 +37,7 @@ public class LectorData {
     private Ang2CCL a2ccl;
 
     /**
-     * Crea una instancia de Lectorins
+     * Crea una instancia de LectorData
      * @param snomarch Nombre del archivo a recuperar
      * @param aD  Datos
      * @param nivel1_id
@@ -267,10 +267,6 @@ public class LectorData {
             }
 
 
-
-
-
-
             if (ce == cedo || cedo == 0) {
 
                 Dato daux = new Dato(ce, cm, cl, valor, marca);
@@ -361,13 +357,9 @@ public class LectorData {
 
             snorte = st.nextToken();
 
-
-
             ITER2Ang i2a = new ITER2Ang(seste, snorte);
 
             a2ccl.Grados2PCCL(i2a.lon, i2a.lat);
-
-
 
             if (ce == cedo || cedo == 0) {
 
