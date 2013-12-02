@@ -122,7 +122,7 @@ public class INT2svg {
     public static void main(String[] sargs) {
 
         //el xml con instrucciones
-         new INT2svg(sargs);
+        new INT2svg(sargs);
 
     }
 

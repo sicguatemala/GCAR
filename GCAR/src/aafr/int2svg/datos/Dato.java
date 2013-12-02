@@ -114,4 +114,10 @@ public class Dato {
         rango=marca;
         this.bvalor_nd=false;
     }
+    
+    
+    @Override
+    public String toString(){
+        return new String(this.sid+"|"+this.valor+"|"+this.marca+"|"+this.bvalor_nd);
+    }
 }

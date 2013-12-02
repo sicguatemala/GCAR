@@ -13,7 +13,7 @@ import java.util.ArrayList;
 /**
  *
  * Clase que mantiene y procesa los datos resultado del proceso del XML, y
- * concentra toda la informacion necesaria para efectuar el pintado del raster
+ * concentra toda la información necesaria para efectuar el pintado del raster
  *
  * (JPEG o PNG) y/o SVG
  * @author AAFR, GENEC, S.A. de C.V.
@@ -31,7 +31,7 @@ public class DataXML {
     public ArrayList<RRCdato> alrrc;
     /**
      *
-     * Descripcion del dato de color donde aplica
+     * Descripción del dato de color donde aplica
      *
      */
     public String snomadata;
@@ -413,7 +413,7 @@ public class DataXML {
 
     /**
      *
-     * Metdo que obtiene el rango al que pertenece un municipio
+     * Método que obtiene el rango al que pertenece un municipio
      *
      * @param ce clave de estado
      * @param cm clave de municipio

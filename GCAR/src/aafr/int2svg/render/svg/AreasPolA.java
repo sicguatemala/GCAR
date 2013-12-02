@@ -89,12 +89,12 @@ public class AreasPolA extends DibSVGG {
         Colorc color;
         Double dnivel = new Double(0.0);
         if (midxml.besalfan) {
+            
             int icolor = midxml.obtenRango((pola.sdatos.get(midxml.indfiltro)).trim());
             color = midxml.rango2color(icolor);
+            System.out.println("filtro: "+midxml.indfiltro+" valor: "+pola.sdatos.get(midxml.indfiltro).trim()+" icolor: "+icolor+ " color: "+color);
         } else {
-            
-            //System.out.println("filtro: "+midxml.indfiltro+" valor: "+pola.sdatos.get(midxml.indfiltro).trim());
-            
+                                  
             dnivel = Double.parseDouble((pola.sdatos.get(midxml.indfiltro)).trim());
             int icolor = midxml.obtenRango(dnivel.intValue(), 0);
             color = midxml.rango2color(icolor);

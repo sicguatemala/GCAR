@@ -123,7 +123,7 @@ public class LectorDataGA {
 
             if (svalor.length() >= 0 && svalor.charAt(0) != '#') {
 
-                if (svalor.length() == 0) {
+                if (svalor.equalsIgnoreCase("nd")) {
                     valor = Double.NaN;
                 } else {
                     valor = Double.parseDouble(svalor);
@@ -145,6 +145,8 @@ public class LectorDataGA {
             if (b_nd) {
                 daux.bvalor_nd = true;
             }
+            
+            System.out.println(daux);
             aD.add(daux);
 
         } catch (NumberFormatException nfex) {

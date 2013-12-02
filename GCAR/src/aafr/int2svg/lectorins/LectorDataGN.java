@@ -11,9 +11,9 @@ import java.util.StringTokenizer;
 public class LectorDataGN extends LectorDataGA {
 
     /**
-     * 
+     *
      * @param snomarch
-     * @param aD 
+     * @param aD
      */
     public LectorDataGN(String snomarch, ArrayList<Dato> aD) {
         super(snomarch, aD);
@@ -58,7 +58,7 @@ public class LectorDataGN extends LectorDataGA {
             svalor = st.nextToken();
 
             if (svalor.length() > 0 && svalor.charAt(0) != '#') {
-                
+
                 if (svalor.equalsIgnoreCase("nd")) {
                     valor = Double.NaN;
                 } else {
@@ -73,7 +73,7 @@ public class LectorDataGN extends LectorDataGA {
                     marca = -1000;
                     b_nd = true;
                 } else {
-                marca = Integer.parseInt(smarca);
+                    marca = Integer.parseInt(smarca);
                 }
             }
 
