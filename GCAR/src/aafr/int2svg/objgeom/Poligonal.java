@@ -24,7 +24,7 @@ public class Poligonal {
     public Poligonal(int []x,int y[], int npuntos) {
         
         xpoints=x;
-        this.ypoints=y;
+        ypoints=y;
         
         npoints=npuntos;
         

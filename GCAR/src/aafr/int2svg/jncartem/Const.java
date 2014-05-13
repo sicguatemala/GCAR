@@ -23,6 +23,7 @@ public class Const {
     public static final int MUNICIPAL=3;
     public static final int DISTRITAL=2;
     public static final int REGIONAL=1;
+    public static final int ESTATAL=4;
     
 /**
  * 
