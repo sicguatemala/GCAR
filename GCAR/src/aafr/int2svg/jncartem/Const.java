@@ -13,8 +13,10 @@ public class Const {
     
     
     public static final int NIVEL_UNICO = 1;
+    
     public static final int CONCENTRACION1 = 2;
     public static final int CONCENTRACION2 = 3;
+    
     public static final int CAPAS2 = 20;
     public static final int CAPAPOLI=10;
     
@@ -28,7 +30,7 @@ public class Const {
 /**
  * 
  */
-    public static final String DIRBASE=new String("");
+    public static final String DIRBASE="";
     
 
     

@@ -9,20 +9,18 @@ import java.io.*;
 
 /**
  * Clase generica que carga archivos de formato INT
- * @author alfonso
+ * @author AAFR <alffore@gmail.com>
  */
 public class LectorINT {
 
-    private File farch;
-    //private String snomafint;
+    private final File farch;
+    
 
     /**
      * Creates a new instance of LectorINT
      * @param snomarch 
      */
-    public LectorINT(String snomarch) {
-
-        
+    public LectorINT(String snomarch) {        
         farch = new File(snomarch);
     }
 
@@ -63,12 +61,12 @@ public class LectorINT {
         } catch (FileNotFoundException fnfex) {
 
             System.out.println(fnfex);
-            fnfex.printStackTrace();
+           
 
         } catch (IOException ioex) {
 
             System.out.println(ioex);
-            ioex.printStackTrace();
+           
 
         }
 

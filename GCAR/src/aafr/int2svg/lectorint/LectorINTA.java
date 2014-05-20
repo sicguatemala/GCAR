@@ -29,7 +29,6 @@ public class LectorINTA extends LectorINT {
             System.out.println("DEPURACION: LectorINTA entrada: " + midxml.sdirMGM);
         }
 
-
         this.aPA = midxml.aPA;
 
         leedatos();
@@ -50,13 +49,9 @@ public class LectorINTA extends LectorINT {
             System.out.println("DEPURACION: LectorINTA con archivo entrada: " + sarchivo);
         }
 
-
         this.aPA = midxml.aPA;
 
-
-
         leedatos();
-
 
     }
 
@@ -75,13 +70,9 @@ public class LectorINTA extends LectorINT {
             System.out.println("DEPURACION: LectorINTA con archivo entrada: " + sarchivo);
         }
 
-
         this.aPA = aPA;
 
-
-
         leedatos();
-
 
     }
 
@@ -108,7 +99,6 @@ public class LectorINTA extends LectorINT {
 
             if (vpres.get(0).equals("SHPT_POLYGON") || vpres.get(0).equals("SHPT_ARC")) {
 
-
                 st = new StringTokenizer(vpres.get(2), ",");
 
                 int npuntos = st.countTokens() / 2;
@@ -124,10 +114,8 @@ public class LectorINTA extends LectorINT {
                     Double fx = Double.parseDouble(st.nextToken());
                     Double fy = Double.parseDouble(st.nextToken());
 
-
                     x[j] = Math.round((new Float(fx.doubleValue() * midxml.factoresc)).floatValue());
                     y[j] = Math.round((new Float(fy.doubleValue() * midxml.factoresc)).floatValue());
-
 
                     j++;
 
@@ -136,7 +124,6 @@ public class LectorINTA extends LectorINT {
                 PoligonoA paux = new PoligonoA(x, y, npuntos, vpres);
                 paux.invalidate();
                 aPA.add(paux);
-
 
             }
         }

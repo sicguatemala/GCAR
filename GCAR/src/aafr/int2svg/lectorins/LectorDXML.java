@@ -5,16 +5,10 @@
  */
 package aafr.int2svg.lectorins;
 
-import aafr.int2svg.datos.DataXML;
-import aafr.int2svg.datos.RRCdato;
+import aafr.int2svg.datos.*;
 import aafr.int2svg.jncartem.Const;
 import java.awt.Color;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
+import java.io.*;
 import java.util.StringTokenizer;
 import org.kxml.Attribute;
 import org.kxml.Xml;
@@ -125,7 +119,7 @@ public class LectorDXML {
 
         }
 
-        if (qName.equals("dir_fuente")) {
+        if (qName.equals("dir_fuente") || qName.equals("dir_mgm")) {
 
             dxml.sdirMGM = checaDirsH(attrs[0].getValue());
 
@@ -133,7 +127,7 @@ public class LectorDXML {
 
             dxml.sdirFuente2 = checaDirsH(attrs[0].getValue());
 
-        } else if (qName.equals("dir_fuente2")) {
+        } else if (qName.equals("dir_fuente2")|| qName.equals("dir_mgme")) {
 
             dxml.sdirMGME = checaDirsH(attrs[0].getValue());
 

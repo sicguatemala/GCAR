@@ -72,53 +72,50 @@ public class ORIndeG2 {
      *
      */
     public int cory;
-    
-    
+
     public int xming, yming;
     public int xmaxg, ymaxg;
-    
-    
+
     boolean bpvg;
 
     /**
-     * 
-     * @param midxml 
+     *
+     * @param midxml
      */
     public ORIndeG2(DataXML midxml) {
 
         this.inicializador(midxml);
-        
+
         this.addPoligonos(midxml.aPA);
 
     }
 
     /**
-     * 
+     *
      * @param midxml
-     * @param aPA 
+     * @param aPA
      */
     public ORIndeG2(DataXML midxml, ArrayList<PoligonoA> aPA) {
 
         this.inicializador(midxml);
 
-        
         this.addPoligonos(aPA);
     }
-    
+
     /**
-     * 
-     * @param midxml
-     * @param aPA 
+     *
+     * @param aPA
      */
-    public void addPoligonos(ArrayList<PoligonoA> aPA){
+    public void addPoligonos(ArrayList<PoligonoA> aPA) {
         if (aPA != null) {
             this.obtenLimites(aPA);
         }
     }
-    
+
     /**
-     *  Metodo que inicializa el escalador
-     * @param midxml 
+     * Metodo que inicializa el escalador
+     *
+     * @param midxml
      */
     private void inicializador(DataXML midxml) {
         this.midxml = midxml;
@@ -143,9 +140,11 @@ public class ORIndeG2 {
     }
 
     /**
-     *  Metodo que permite obtener los limites de todos los poligonos involucrados
+     * Metodo que permite obtener los limites de todos los poligonos
+     * involucrados
+     *
      * @param aPA
-     * @return 
+     * @return
      */
     public final int obtenLimites(ArrayList<PoligonoA> aPA) {
 
@@ -162,10 +161,8 @@ public class ORIndeG2 {
 
         System.out.println("obtenlimites Generales: inicio: " + vtam);
 
-
         for (int i = 0; i < vtam; i++) {
 
-            
             Rectangle rec = aPA.get(i).getBounds();
 
             if (!bpv) {
@@ -194,7 +191,6 @@ public class ORIndeG2 {
             }
         }
 
-
         if (bpvg) {
             xmin = Math.min(xmin, xming);
             ymin = Math.min(ymin, yming);
@@ -206,7 +202,6 @@ public class ORIndeG2 {
         pvinf = new Point(xmin, ymin);
         pvsup = new Point(xmax, ymax);
 
-
         xming = xmin;
         yming = ymin;
         xmaxg = xmax;
@@ -214,13 +209,11 @@ public class ORIndeG2 {
 
         bpvg = true;
 
-
         //se calculan los paramentros de la transformacion
         int dimmx = xmax - xmin;
         int dimmy = ymax - ymin;
 
         int dimmmax = Math.max(dimmy, dimmx);
-
 
         if (Const.BDEP) {
             System.out.println("DEPURACION dimmx: " + dimmx + " dimmy: " + dimmy + " DIMX: " + DIMX + " DIMY: " + DIMY);
@@ -245,7 +238,6 @@ public class ORIndeG2 {
             }
         }
 
-
         corx = (int) (DIMX / 2 - escala * ((xmax + xmin) / 2 - xmin));
         cory = (int) (DIMY / 2 + escala * ((ymax + ymin) / 2 - ymin));
 
@@ -259,9 +251,9 @@ public class ORIndeG2 {
     }
 
     /**
-     * 
+     *
      * @param aPA
-     * @return 
+     * @return
      */
     public int escalaPoligonos(ArrayList<PoligonoA> aPA) {
 
@@ -272,7 +264,6 @@ public class ORIndeG2 {
         for (int i = 0; i < vtam; i++) {
             escalaPoligono(aPA.get(i));
         }
-
 
         System.out.println("escala poligonos arbitrarios: fin");
 
@@ -308,11 +299,11 @@ public class ORIndeG2 {
     }
 
     /**
-     * Metodo que escala un punto de Coordenadas geograficas a coordenadas del mapa.
-     * Misma proyeccion, mismo esquema de coordenadas.
-     * 
+     * Metodo que escala un punto de Coordenadas geograficas a coordenadas del
+     * mapa. Misma proyeccion, mismo esquema de coordenadas.
+     *
      * @param daux
-     * @return 
+     * @return
      */
     public Dato escalaPunto(Dato daux) {
 
@@ -348,6 +339,7 @@ public class ORIndeG2 {
 
     /**
      * Metodo que obtiene el color al proporcionar un rango
+     *
      * @param rango
      * @return
      */
@@ -378,8 +370,8 @@ public class ORIndeG2 {
     }
 
     /**
-     * 
-     * @return 
+     *
+     * @return
      */
     public Colorc obtenColorContorno() {
 

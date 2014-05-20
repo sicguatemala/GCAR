@@ -114,14 +114,10 @@ public class ConcentraRecG extends DibSVGG {
 
         while (true) {
 
-
-
             xa = pola.xpoints[i];
             ya = pola.ypoints[i];
 
             fbwp.write(" " + xa + "," + ya);
-
-
 
             i++;
 
@@ -141,8 +137,6 @@ public class ConcentraRecG extends DibSVGG {
      */
     void pintaCirculo(Dato dat) throws IOException {
 
-
-
         dat = escalaPunto(dat);
 
         Point pl = new Point((int) dat.este, (int) dat.norte);
@@ -154,9 +148,7 @@ public class ConcentraRecG extends DibSVGG {
             dat.radio=midxml.rango2radio(dat.rango);
             scolor=midxml.rango2colorr(dat.rango);
         }
-        
-        
-
+               
         fbwp.write("<circle opacity=\".7\" fill=\"" + scolor + "\"  cx=\"" + pl.x + "\" cy=\"" + pl.y + "\" r=\"" + dat.radio + "\"/>");
 
     }

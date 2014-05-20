@@ -6,8 +6,8 @@ import aafr.int2svg.objgeom.Poligono;
 import java.util.ArrayList;
 
 /**
- *
- * @author AAFR
+ * Esta clase representa un poligono arbitrario
+ * @author AAFR <alffore@gmail.com>
  */
 public class PoligonoA extends Poligono{
 

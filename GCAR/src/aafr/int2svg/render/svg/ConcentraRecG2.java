@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package aafr.int2svg.render.svg;
 
 import aafr.int2svg.datos.DataXML;
@@ -28,7 +25,6 @@ public class ConcentraRecG2 extends ConcentraRecG{
      */
     @Override
     void pintaCirculo(Dato dat) throws IOException {
-
 
         dat = escalaPunto(dat);
 
