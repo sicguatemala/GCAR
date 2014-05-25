@@ -87,7 +87,7 @@ public class LectorINTA extends LectorINT {
 
         StringTokenizer st = new StringTokenizer(spar, "|");
 
-        ArrayList<String> vpres = new ArrayList<String>();
+        ArrayList<String> vpres = new ArrayList<>();
 
         while (st.hasMoreTokens()) {
             vpres.add(st.nextToken());
