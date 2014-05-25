@@ -72,7 +72,7 @@ public class AreasPolA extends DibSVGG {
      * @param pola
      * @throws IOException
      */
-    private void pintaPoligono(PoligonoA pola) throws IOException {
+    protected void pintaPoligono(PoligonoA pola) throws IOException {
 
 
         Rectangle2D rec2d = pola.getBounds2D();
@@ -88,6 +88,7 @@ public class AreasPolA extends DibSVGG {
 
         Colorc color;
         Double dnivel = new Double(0.0);
+        Double dnivel2= new Double(0.0);
         if (midxml.besalfan) {
             
             int icolor = midxml.obtenRango((pola.sdatos.get(midxml.indfiltro)).trim());
@@ -96,7 +97,13 @@ public class AreasPolA extends DibSVGG {
         } else {
                                   
             dnivel = Double.parseDouble((pola.sdatos.get(midxml.indfiltro)).trim());
-            int icolor = midxml.obtenRango(dnivel.intValue(), 0);
+            
+            if(midxml.indfiltro2>0){
+                dnivel2 =Double.parseDouble((pola.sdatos.get(midxml.indfiltro2)).trim());
+            }
+            
+            
+            int icolor = midxml.obtenRango(dnivel.intValue(), dnivel2.intValue());
             color = midxml.rango2color(icolor);
         }
 
