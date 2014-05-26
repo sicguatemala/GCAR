@@ -9,13 +9,13 @@ import aafr.int2svg.jncartem.Const;
 import aafr.int2svg.objcarto.PoligonoA;
 import java.util.ArrayList;
 
-
 /**
  *
  * Clase que mantiene y procesa los datos resultado del proceso del XML, y
  * concentra toda la información necesaria para efectuar el pintado del raster
  *
  * (JPEG o PNG) y/o SVG
+ *
  * @author AAFR, GENEC, S.A. de C.V.
  *
  */
@@ -69,7 +69,8 @@ public class DataXML {
     public float margen;
     /**
      *
-     * Indicador de alcance especifico (se pinta a nivel de municipios y/o localidades)
+     * Indicador de alcance especifico (se pinta a nivel de municipios y/o
+     * localidades)
      *
      */
     public boolean aesp;
@@ -84,7 +85,7 @@ public class DataXML {
      */
     public int alcance_ce;
     /**
-     *Clave de estado para centrar
+     * Clave de estado para centrar
      */
     public int alcance_cce;
     /**
@@ -93,11 +94,10 @@ public class DataXML {
      *
      */
     public float calidadJPG;
-    
-    
+
     public double ancholin;
     /**
-     * Especifica el formato  deseado
+     * Especifica el formato deseado
      */
     public String sformato;
     /**
@@ -119,7 +119,8 @@ public class DataXML {
     public boolean bp_fmun;
     /**
      *
-     * Booleano para indicar que se va a construir el mapa de tipo cliente para un raster
+     * Booleano para indicar que se va a construir el mapa de tipo cliente para
+     * un raster
      *
      */
     public boolean bp_mapahtml;
@@ -127,7 +128,7 @@ public class DataXML {
      * String de color de fondo por default de poligonos
      */
     public String scfondo;
-    
+
     /**
      * String de color No Disponible (ND)
      */
@@ -143,7 +144,8 @@ public class DataXML {
     public String sdirFNME;
     /**
      *
-     * booleano para indicar que se va incluir en el mapa la nomenclatura de municipios
+     * booleano para indicar que se va incluir en el mapa la nomenclatura de
+     * municipios
      *
      */
     public boolean bp_nom;
@@ -151,7 +153,7 @@ public class DataXML {
     public String archivo_destino;
     public String archivo_complemento;
     public ArrayList<Dato> aDatos;
-    
+
     /**
      * Poligono arbitrario
      */
@@ -161,24 +163,22 @@ public class DataXML {
      * Indice para filtrado
      */
     public int indfiltro;
-    
+
     /**
      * Indicador se el filtro es alfanumerico
      */
     public boolean besalfan;
-    
+
     /**
      * Indice para el filtrado de la segunda capa
      */
-    
     public int indfiltro2;
-    
+
     /**
      * Factores de tranparencia
      */
     public double[] dtrans;
-    
-    
+
     //Seccion de SVG
     /**
      *
@@ -198,28 +198,26 @@ public class DataXML {
      * Booleano para indicar el centrado de la localidad
      */
     public boolean bcenloc;
-    
-    
+
     //seccion de sripts
     public boolean bscript;
-    
+
     public String spath_script;
 
     // booblean para indicar que el SVG va ser embebido en un HTML5
-    
     public boolean bembebido;
-    
+
     //booleano para indicar que los poligonos van por rotulos
     public boolean binrotulos;
-    
+
     //booleano para indicar el subtipo de mapa
     public int subtipom;
-    
+
     /**
      *
      */
     public String arch_rotulos;
-    
+
     /**
      * Crea una nueva instancia de DataXML
      *
@@ -228,21 +226,17 @@ public class DataXML {
 
         alcolor = new ArrayList<Colorc>();
 
-
         alrrc = new ArrayList<RRCdato>();
 
         //fija el alcance especifico a false calculo por estados
-
         aesp = false;
 
         bcenloc = false;
-
 
         dimx = 0;
         dimy = 0;
         margen = 0.00f;
         factoresc = 1.00d;
-
 
         //alcance_ce=-1;
         alcance_cce = -1;
@@ -253,16 +247,13 @@ public class DataXML {
 
         bp_mapahtml = false;
 
-
         archivo_destino = "indefinido";
 
         archivo_complemento = "";
 
-        arch_rotulos="";
+        arch_rotulos = "";
 
         calidadJPG = 0.85f;
-
-
 
         bp_fest = false;
 
@@ -272,38 +263,27 @@ public class DataXML {
 
         bescalado = false;
 
-
-
-
         //crea los vectores para acumular la informacion
         aDatos = new ArrayList<Dato>();
-
-
-
 
         aPA = new ArrayList<PoligonoA>();
         aPA2 = new ArrayList<PoligonoA>();
 
-
-
-
         sna_estilo_svg = new String();
 
-
         scfondo = "rgb(240,240,240)";
-        
-        this.indfiltro=-1;
-        this.indfiltro2=-1;
-        
-        this.besalfan=false;
-        
-        this.ancholin=0.25;
 
-        this.bscript=false;
-        this.spath_script=new String();
-        
-        
-        this.bembebido=true;
+        this.indfiltro = -1;
+        this.indfiltro2 = -1;
+
+        this.besalfan = false;
+
+        this.ancholin = 0.25;
+
+        this.bscript = false;
+        this.spath_script = new String();
+
+        this.bembebido = true;
     }
 
     /**
@@ -345,51 +325,52 @@ public class DataXML {
         return Const.COLINDEFINIDO_SISTEMA;
 
     }
-    
-    
-    public String rango2colorr(int rango){
-        int tamc=alrrc.size();
-        
-        for(int i=0;i<tamc;i++){
-            
-            RRCdato aux=alrrc.get(i);
-            if(aux.rango==rango){
-                return aux.scolor;
-            }
-        }
-        
-        return Const.COLINDEFINIDO_SISTEMA.toString();
-    }
-    
-    
-    /**
-     * 
-     * @param rango
-     * @return 
-     */
-    public double rango2radio(int rango){
-        
-        int tam=alrrc.size();
-        
-        for(int i=0;i<tam;i++){
-            
-            RRCdato aux=alrrc.get(i);
-            if(aux.rango==rango){
-                return aux.radio;
-            }
-        }
-        
-        return 0;
-        
-    }
-    
-    
 
     /**
      *
-     * Metodo que regresa un color si se le pasa como argumento su descripcion
+     * @param rango
+     * @return
+     */
+    public String rango2colorr(int rango) {
+        int tamc = alrrc.size();
+
+        for (int i = 0; i < tamc; i++) {
+
+            RRCdato aux = alrrc.get(i);
+            if (aux.rango == rango) {
+                return aux.scolor;
+            }
+        }
+
+        return Const.COLINDEFINIDO_SISTEMA.toString();
+    }
+
+    /**
      *
-     * @param sdesc Descripcion del color que se desea
+     * @param rango
+     * @return
+     */
+    public double rango2radio(int rango) {
+
+        int tam = alrrc.size();
+
+        for (int i = 0; i < tam; i++) {
+
+            RRCdato aux = alrrc.get(i);
+            if (aux.rango == rango) {
+                return aux.radio;
+            }
+        }
+
+        return 0;
+
+    }
+
+    /**
+     *
+     * Metodo que regresa un color si se le pasa como argumento su descripción
+     *
+     * @param sdesc Descripción del color que se desea
      * @return Regresa un Objeto Colorc
      * @see Colorc
      *
@@ -423,26 +404,33 @@ public class DataXML {
      */
     public int obtenRango(int ce, int cm) {
 
-        
-
         int vtam = aDatos.size();
 
         for (int i = 0; i < vtam; i++) {
 
             Dato dat = aDatos.get(i);
 
-            if (aesp) {
-
+//            if (aesp) {
+//
+//                if (dat.nivel1_id == ce && dat.nivel2_id == cm) {
+//                    return dat.rango;
+//                }
+//
+//            } else {
+//
+//                if (dat.nivel1_id == ce) {
+//                    return dat.rango;
+//                }
+//
+//            }
+            if (cm > 0) {
                 if (dat.nivel1_id == ce && dat.nivel2_id == cm) {
                     return dat.rango;
                 }
-
             } else {
-
                 if (dat.nivel1_id == ce) {
                     return dat.rango;
                 }
-
             }
 
         }
@@ -450,36 +438,34 @@ public class DataXML {
         return -1;
 
     }
-    
+
     /**
-     * 
+     *
      * @param sid
-     * @return 
+     * @return
      */
-   public int obtenRango(String sid){
+    public int obtenRango(String sid) {
         int vtam = aDatos.size();
         for (int i = 0; i < vtam; i++) {
 
             Dato dat = aDatos.get(i);
-            
-            if(dat.sid.equals(sid)){
+
+            if (dat.sid.equals(sid)) {
                 return dat.rango;
             }
-                                   
+
         }
-        
+
         return -1;
-   }
-    
+    }
+
     /**
-     * 
+     *
      * @param ce
      * @param cm
-     * @return 
+     * @return
      */
-       public double obtenValor(int ce, int cm) {
-
-        
+    public double obtenValor(int ce, int cm) {
 
         int vtam = aDatos.size();
 
@@ -506,18 +492,16 @@ public class DataXML {
         return -1;
 
     }
-       
-       
-       /**
-        * Metodo para obtener el nombre del municipio adecuado
-     
-        * 
-        * @param ce
-        * @param cm
-        * @return 
-        */
-       public String obtenNombre(int ce,int cm){
-         
+
+    /**
+     * Metodo para obtener el nombre del municipio adecuado
+     *
+     *
+     * @param ce
+     * @param cm
+     * @return
+     */
+    public String obtenNombre(int ce, int cm) {
 
         int vtam = aDatos.size();
 
@@ -525,20 +509,20 @@ public class DataXML {
 
             Dato dat = aDatos.get(i);
 
-                if (dat.nivel1_id == ce && dat.nivel2_id == cm) {
-                    switch(this.subtipom){
-                        case Const.MUNICIPAL:
-                            return dat.snm;
-                        case Const.DISTRITAL:
-                            return dat.snd;
-                        case Const.REGIONAL:
-                            return dat.snr;
-                    }
+            if (dat.nivel1_id == ce && dat.nivel2_id == cm) {
+                switch (this.subtipom) {
+                    case Const.MUNICIPAL:
+                        return dat.snm;
+                    case Const.DISTRITAL:
+                        return dat.snd;
+                    case Const.REGIONAL:
+                        return dat.snr;
                 }
+            }
 
         }
 
-        return null;  
-       }
-       
+        return null;
+    }
+
 }

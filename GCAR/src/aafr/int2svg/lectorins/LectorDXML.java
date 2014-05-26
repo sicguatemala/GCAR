@@ -9,11 +9,9 @@ import aafr.int2svg.datos.*;
 import aafr.int2svg.jncartem.Const;
 import java.awt.Color;
 import java.io.*;
-import java.util.StringTokenizer;
-import org.kxml.Attribute;
-import org.kxml.Xml;
-import org.kxml.parser.ParseEvent;
-import org.kxml.parser.XmlParser;
+import java.util.*;
+import org.kxml.*;
+import org.kxml.parser.*;
 
 /**
  * Clase que lee un XML con todas las instrucciones de pintado necesarias
@@ -127,7 +125,7 @@ public class LectorDXML {
 
             dxml.sdirFuente2 = checaDirsH(attrs[0].getValue());
 
-        } else if (qName.equals("dir_fuente2")|| qName.equals("dir_mgme")) {
+        } else if (qName.equals("dir_fuente2") || qName.equals("dir_mgme")) {
 
             dxml.sdirMGME = checaDirsH(attrs[0].getValue());
 
@@ -175,7 +173,7 @@ public class LectorDXML {
                 dxml.ponColor(col.getRed(), col.getGreen(), col.getBlue(), "nd", -1000);
             }
 
-        }else if (qName.equals("tipo_corrd_loc")) {
+        } else if (qName.equals("tipo_corrd_loc")) {
 
             dxml.sLocCoord = attrs[0].getValue();
 
@@ -241,7 +239,7 @@ public class LectorDXML {
 
         } else if (qName.equals("alcance_cxloc")) {
 
-            dxml.bcenloc = (attrs[0].getValue().equals("t")) ? true : false;
+            dxml.bcenloc = attrs[0].getValue().equals("t");
 
         } else if (qName.equals("dimx") && attrs[0].getValue().length() > 0) {
 

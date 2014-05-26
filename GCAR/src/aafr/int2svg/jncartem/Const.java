@@ -17,8 +17,8 @@ public class Const {
     public static final int CONCENTRACION1 = 2;
     public static final int CONCENTRACION2 = 3;
     
-    public static final int CAPAS2 = 20;
-    public static final int CAPAPOLI=10;
+    public static final int CAPAS2 = 20; // capas simples
+    public static final int CAPAPOLI=10; //capas multipoligonales 
     
     
     //subtipo de mapas

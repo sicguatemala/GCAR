@@ -2,6 +2,8 @@
 package aafr.int2svg.ccoord;
 
 /**
+ * 
+ * Clase que convierte angulos to CCL en DATUM ITRF92 (Mexico - INEGI)
  * @see http://en.wikipedia.org/wiki/GRS_80
  * @author alfonso
  */

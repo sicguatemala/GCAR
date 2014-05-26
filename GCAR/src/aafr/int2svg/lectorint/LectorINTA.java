@@ -95,7 +95,7 @@ public class LectorINTA extends LectorINT {
 
         int vtvp = vpres.size();
 
-        if (this.midxml.alcance_ce == 0 || midxml.alcance_ce == Integer.parseInt(vpres.get(midxml.indfiltro2))) {
+        if (this.midxml.alcance_ce == 0 || midxml.alcance_ce == Integer.parseInt(vpres.get(midxml.indfiltro))) {
 
             if (vpres.get(0).equals("SHPT_POLYGON") || vpres.get(0).equals("SHPT_ARC")) {
 

@@ -87,8 +87,9 @@ public class AreasPolA extends DibSVGG {
 
 
         Colorc color;
-        Double dnivel = new Double(0.0);
-        Double dnivel2= new Double(0.0);
+        Double dnivel1 = 0.0;
+        Double dnivel2= 0.0;
+        
         if (midxml.besalfan) {
             
             int icolor = midxml.obtenRango((pola.sdatos.get(midxml.indfiltro)).trim());
@@ -96,21 +97,22 @@ public class AreasPolA extends DibSVGG {
             System.out.println("filtro: "+midxml.indfiltro+" valor: "+pola.sdatos.get(midxml.indfiltro).trim()+" icolor: "+icolor+ " color: "+color);
         } else {
                                   
-            dnivel = Double.parseDouble((pola.sdatos.get(midxml.indfiltro)).trim());
+            dnivel1 = Double.parseDouble((pola.sdatos.get(midxml.indfiltro)).trim());
             
             if(midxml.indfiltro2>0){
                 dnivel2 =Double.parseDouble((pola.sdatos.get(midxml.indfiltro2)).trim());
             }
-            
-            
-            int icolor = midxml.obtenRango(dnivel.intValue(), dnivel2.intValue());
+                        
+            int icolor = midxml.obtenRango(dnivel1.intValue(), dnivel2.intValue());
             color = midxml.rango2color(icolor);
+            
+            if(Const.BDEP)System.out.println("ce: "+dnivel1.intValue()+" cm: "+dnivel2.intValue()+" icolor: "+icolor);
         }
 
 
         String satteve = "";
         if (midxml.bscript) {
-            satteve = this.genAttEve(pola, dnivel, suidpol);
+            satteve = this.genAttEve(pola, dnivel1, suidpol);
         }
 
         fbwp.write("<polygon  " + satteve);

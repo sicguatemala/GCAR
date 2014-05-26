@@ -33,7 +33,7 @@ public class INT2svg {
 
         //lee documento XML de instrucciones
         midxml = new DataXML();
-        LectorDXML lgi = new LectorDXML(scmd[0], midxml);
+        new LectorDXML(scmd[0], midxml);
 
         if (Const.BDEP) {
             System.out.println(midxml.archivo_origen + " " + midxml.archivo_destino + " " + midxml.alcance_ce);
@@ -51,8 +51,14 @@ public class INT2svg {
                 LectorDataGA miLecDG = new LectorDataGA(midxml.archivo_origen, midxml.aDatos);
                 miLecDG.leeDatos();
             } else {
-                LectorDataGN miLecDG = new LectorDataGN(midxml.archivo_origen, midxml.aDatos);
-                miLecDG.leeDatos();
+
+                if (midxml.indfiltro2 > 0) {
+                    LectorData miLecD = new LectorData(midxml.archivo_origen, midxml.aDatos, midxml.alcance_ce, 0);
+                    miLecD.leeDatos();
+                } else {
+                    LectorDataGN miLecDG = new LectorDataGN(midxml.archivo_origen, midxml.aDatos);
+                    miLecDG.leeDatos();
+                }
             }
         }
 
