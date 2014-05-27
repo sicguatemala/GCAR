@@ -13,7 +13,10 @@ import java.io.IOException;
 public class ConcentraRecG2 extends ConcentraRecG{
     
     
-    
+    /**
+     * 
+     * @param midxml 
+     */
     public ConcentraRecG2(DataXML midxml){
         super(midxml);
     }

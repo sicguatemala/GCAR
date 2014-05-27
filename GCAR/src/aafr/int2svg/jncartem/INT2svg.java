@@ -43,10 +43,15 @@ public class INT2svg {
         if (!midxml.besalfan && (midxml.alcance_tipo == Const.CONCENTRACION1
                 || midxml.alcance_tipo == Const.CONCENTRACION2)) {
 
-            LectorPC miLecPC = new LectorPC(midxml.archivo_origen, midxml.aDatos);
-            miLecPC.leeDatos();
+            if (midxml.sLocCoord.equalsIgnoreCase("DEG2ITRF92")) {
+                LectorPCMX mil = new LectorPCMX(midxml.archivo_origen, midxml.aDatos);
+                mil.leeDatos();
+            } else {
+                LectorPC miLecPC = new LectorPC(midxml.archivo_origen, midxml.aDatos);
+                miLecPC.leeDatos();
+            }
 
-        } else if (midxml.alcance_tipo == Const.NIVEL_UNICO) {
+        } else if (midxml.alcance_tipo == Const.NIVEL_MULTI12) {
             if (midxml.besalfan) {
                 LectorDataGA miLecDG = new LectorDataGA(midxml.archivo_origen, midxml.aDatos);
                 miLecDG.leeDatos();

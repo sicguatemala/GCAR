@@ -29,7 +29,10 @@ public class ConcentraRecG extends DibSVGG {
         }
 
     }
-
+/**
+ * 
+ * @return 
+ */
     @Override
     public boolean pintaMapa() {
 
@@ -55,6 +58,10 @@ public class ConcentraRecG extends DibSVGG {
         return true;
     }
 
+    /**
+     * 
+     * @throws IOException 
+     */
     void pintaPoligonoA() throws IOException {
         int atam = midxml.aPA.size();
 
@@ -64,6 +71,10 @@ public class ConcentraRecG extends DibSVGG {
         }
     }
 
+    /**
+     * 
+     * @throws IOException 
+     */
     void pintaCL() throws IOException {
 
 
@@ -79,10 +90,15 @@ public class ConcentraRecG extends DibSVGG {
         }
     }
 
+    /**
+     * 
+     * @param pola
+     * @throws IOException 
+     */
     private void pintaPoligono2(PoligonoA pola) throws IOException {
 
 
-        String sid = (pola.sdatos.get(midxml.indfiltro)).trim();
+        String sid = (pola.sdatos.get(midxml.indfiltro1)).trim();
         String strans = "";
 
 

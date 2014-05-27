@@ -1,17 +1,15 @@
 package aafr.int2svg.render.svg;
 
-import aafr.int2svg.datos.Colorc;
-import aafr.int2svg.datos.DataXML;
+import aafr.int2svg.datos.*;
 import aafr.int2svg.jncartem.Const;
 import aafr.int2svg.objcarto.PoligonoA;
 import java.awt.geom.Rectangle2D;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.logging.*;
 
 /**
- *
+ * Clase que pinta poligonos multiples
  * @author  AAFR
  */
 public class AreasPolAM extends DibSVGG {
@@ -115,10 +113,10 @@ public class AreasPolAM extends DibSVGG {
 
 
 
-        String sid = (pola.sdatos.get(midxml.indfiltro)).trim();
+        String sid = (pola.sdatos.get(midxml.indfiltro1)).trim();
         String strans = "fill-opacity=\"" + dtrans + "\" stroke-opacity=\"" + dtrans + "\"";
 
-        Double dnivel = Double.parseDouble((pola.sdatos.get(midxml.indfiltro)).trim());
+        Double dnivel = Double.parseDouble((pola.sdatos.get(midxml.indfiltro1)).trim());
         //Integer inivel=new Integer(dnivel.intValue());
 
         int icolor = midxml.obtenRango(dnivel.intValue(), 0);

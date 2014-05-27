@@ -7,26 +7,26 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- *
+ * Clase que renderea poligonales
  * @author alfonso
  */
 public class AreasPolig extends AreasPolAM {
 
     /**
-     * 
+     *
      * @param dxml
-     * @param bca 
+     * @param bca
      */
     public AreasPolig(DataXML dxml, boolean bca) {
-        super(dxml, bca,false);
+        super(dxml, bca, false);
     }
 
     /**
-     * 
+     *
      * @param aPA
      * @param dtrans
      * @param icapa
-     * @throws IOException 
+     * @throws IOException
      */
     @Override
     void pintaCapa(ArrayList<PoligonoA> aPA, double dtrans, int icapa) throws IOException {
@@ -38,19 +38,18 @@ public class AreasPolig extends AreasPolAM {
     }
 
     /**
-     * 
+     *
      * @param pola
      * @param dtrans
      * @param icapa
-     * @throws IOException 
+     * @throws IOException
      */
     private void pintaPoligonal(PoligonoA pola, double dtrans, int icapa) throws IOException {
-
 
         String sid = "";
         String strans = "";
 
-        Double dnivel = Double.parseDouble((pola.sdatos.get(midxml.indfiltro)).trim());
+        Double dnivel = Double.parseDouble((pola.sdatos.get(midxml.indfiltro1)).trim());
 
         Colorc color = this.obtenColorRango(midxml.obtenRango(dnivel.intValue(), 0));
 
@@ -74,7 +73,7 @@ public class AreasPolig extends AreasPolAM {
             if (i == pola.npoints) {
                 break;
             }
-            
+
             xa = pola.xpoints[i];
             ya = pola.ypoints[i];
 
@@ -87,37 +86,31 @@ public class AreasPolig extends AreasPolAM {
         fbwp.write(" \"/>");
 
     }
-    
-    
-       /**
-     * 
+
+    /**
+     *
      * @param pola
      * @param dtrans
      * @param icapa
-     * @throws IOException 
+     * @throws IOException
      */
     private void pintaPoligonal2(PoligonoA pola, double dtrans, int icapa) throws IOException {
-
 
         String sid = "";
         String strans = "stroke-opacity=\"" + dtrans + "\"";
         int i = 0;
 
-
-
         Colorc color = midxml.rango2color(0);
-        
+
         fbwp.write("<polyline ");
         fbwp.write("stroke=\"rgb(" + color + ")\" stroke-width=\"1\" stroke-linejoin=\"round\" fill=\"none\" " + strans);
         fbwp.write(" id=\"i" + i + "\"");
         fbwp.write(" points=\"");
 
-        
-
         int xa = pola.xpoints[0];
         int ya = pola.ypoints[0];
 
-        fbwp.write( xa + "," + ya);
+        fbwp.write(xa + "," + ya);
 
         i++;
 
@@ -125,15 +118,13 @@ public class AreasPolig extends AreasPolAM {
             if (i == pola.npoints) {
                 break;
             }
-            
+
             xa = pola.xpoints[i];
             ya = pola.ypoints[i];
 
             fbwp.write(" " + xa + "," + ya);
 
             i++;
-
-
 
         }
 

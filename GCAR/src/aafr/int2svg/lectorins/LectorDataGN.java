@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 /**
- *
- * @author alfonso
+ * Clase para leer datos de un solo nivel 
+ * @author AAFR <alffore@gmail.com>
  */
 public class LectorDataGN extends LectorDataGA {
 

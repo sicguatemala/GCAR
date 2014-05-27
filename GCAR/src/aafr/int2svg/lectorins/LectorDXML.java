@@ -199,7 +199,7 @@ public class LectorDXML {
             dxml.alrrc.add(rrc);
 
         } else if (qName.equals("color_contorno")) {
-            Color col = null;
+            Color col;
             if (attrs[0].getValue().length() > 0) {
                 col = parseaSColor(attrs[0].getValue());
             } else {
@@ -219,7 +219,7 @@ public class LectorDXML {
 
         } else if (qName.equals("indfiltro") && attrs[0].getValue().length() > 0) {
 
-            dxml.indfiltro = Integer.parseInt(attrs[0].getValue());
+            dxml.indfiltro1 = Integer.parseInt(attrs[0].getValue());
 
         } else if (qName.equals("indfiltro2") && attrs[0].getValue().length() > 0) {
 

@@ -82,7 +82,7 @@ public class AreasPolA extends DibSVGG {
             return;
         }
 
-        //String suidpol = (pola.sdatos.get(midxml.indfiltro)).trim();
+        //String suidpol = (pola.sdatos.get(midxml.indfiltro1)).trim();
         String strans = "";
 
 
@@ -92,12 +92,12 @@ public class AreasPolA extends DibSVGG {
         
         if (midxml.besalfan) {
             
-            int icolor = midxml.obtenRango((pola.sdatos.get(midxml.indfiltro)).trim());
+            int icolor = midxml.obtenRango((pola.sdatos.get(midxml.indfiltro1)).trim());
             color = midxml.rango2color(icolor);
-            System.out.println("filtro: "+midxml.indfiltro+" valor: "+pola.sdatos.get(midxml.indfiltro).trim()+" icolor: "+icolor+ " color: "+color);
+            System.out.println("filtro: "+midxml.indfiltro1+" valor: "+pola.sdatos.get(midxml.indfiltro1).trim()+" icolor: "+icolor+ " color: "+color);
         } else {
                                   
-            dnivel1 = Double.parseDouble((pola.sdatos.get(midxml.indfiltro)).trim());
+            dnivel1 = Double.parseDouble((pola.sdatos.get(midxml.indfiltro1)).trim());
             
             if(midxml.indfiltro2>0){
                 dnivel2 =Double.parseDouble((pola.sdatos.get(midxml.indfiltro2)).trim());
@@ -176,7 +176,7 @@ public class AreasPolA extends DibSVGG {
         String sid = "";
         String strans = "";
 
-        Double dnivel = Double.parseDouble((pola.sdatos.get(midxml.indfiltro)).trim());
+        Double dnivel = Double.parseDouble((pola.sdatos.get(midxml.indfiltro1)).trim());
 
         Colorc color = this.obtenColorRango(midxml.obtenRango(dnivel.intValue(), 0));
 

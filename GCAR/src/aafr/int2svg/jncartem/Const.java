@@ -12,10 +12,10 @@ public class Const {
     public static final boolean BDEP = true;
     
     
-    public static final int NIVEL_UNICO = 1;
+    public static final int NIVEL_MULTI12 = 1;
     
     public static final int CONCENTRACION1 = 2;
-    public static final int CONCENTRACION2 = 3;
+    public static final int CONCENTRACION2 = 30;
     
     public static final int CAPAS2 = 20; // capas simples
     public static final int CAPAPOLI=10; //capas multipoligonales 

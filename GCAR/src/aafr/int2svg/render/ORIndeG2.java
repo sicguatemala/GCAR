@@ -1,13 +1,10 @@
 package aafr.int2svg.render;
 
-import aafr.int2svg.datos.Colorc;
-import aafr.int2svg.datos.DataXML;
-import aafr.int2svg.datos.Dato;
+import aafr.int2svg.datos.*;
 import aafr.int2svg.jncartem.Const;
 import aafr.int2svg.objcarto.PoligonoA;
 import aafr.int2svg.objgeom.Poligono;
-import java.awt.Point;
-import java.awt.Rectangle;
+import java.awt.*;
 import java.util.ArrayList;
 
 /**
@@ -209,7 +206,7 @@ public class ORIndeG2 {
 
         bpvg = true;
 
-        //se calculan los paramentros de la transformacion
+        //se calculan los paramentros de la transformación
         int dimmx = xmax - xmin;
         int dimmy = ymax - ymin;
 

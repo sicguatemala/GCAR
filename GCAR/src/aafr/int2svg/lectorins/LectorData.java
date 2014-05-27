@@ -29,8 +29,8 @@ public class LectorData {
      * Objeto tipo File del archivo que se esta recuperando
      */
     private File farch;
-    private int cedo;
-    private int alcance_tipo;
+    private final int cedo;
+    private  int alcance_tipo;
     /**
      * Vector de Datos
      */

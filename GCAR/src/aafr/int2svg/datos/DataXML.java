@@ -162,7 +162,7 @@ public class DataXML {
     /**
      * Indice para filtrado
      */
-    public int indfiltro;
+    public int indfiltro1;
 
     /**
      * Indicador se el filtro es alfanumerico
@@ -273,7 +273,7 @@ public class DataXML {
 
         scfondo = "rgb(240,240,240)";
 
-        this.indfiltro = -1;
+        this.indfiltro1 = -1;
         this.indfiltro2 = -1;
 
         this.besalfan = false;

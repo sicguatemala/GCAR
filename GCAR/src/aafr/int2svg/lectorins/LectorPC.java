@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
 
 /**
  *
- * @author AAFR
+ * @author AAFR <alffore@gmail.com>
  */
 public class LectorPC {
 
@@ -19,12 +19,11 @@ public class LectorPC {
     ArrayList<Dato> aD = null;
 
     /**
-     * 
+     *
      * @param snomarch
-     * @param adato 
+     * @param adato
      */
     public LectorPC(String snomarch, ArrayList<Dato> adato) {
-
 
         this.snomarch = snomarch;
 
@@ -33,6 +32,9 @@ public class LectorPC {
         abreArchivo();
     }
 
+    /**
+     *
+     */
     private void abreArchivo() {
         farch = new File(snomarch);
 
@@ -42,7 +44,6 @@ public class LectorPC {
      * Metodo que lee un archivo linea por linea
      */
     public void leeDatos() {
-
 
         StringBuffer sb = new StringBuffer();
 
@@ -62,9 +63,7 @@ public class LectorPC {
                 }
                 if (c == '\n') {
 
-
                     parsea(sb.toString());
-
 
                     sb = new StringBuffer();
 
@@ -78,24 +77,20 @@ public class LectorPC {
 
         } catch (IOException ioex) {
 
-         
-
         }
-
 
     }
 
     /**
-     * 
+     *
      * Metodo que parsea una entrada de coordenadas geograficar con marca valor
      * Modelo:
-     * 
+     *
      * longitud,latitud,valor,marca
-     * 
+     *
      * @return La cantidad de tokens procesados
      */
     public int parsea(String spar) {
-
 
         double longitud = 0.0;
         double latitud = 0.0;
@@ -105,19 +100,16 @@ public class LectorPC {
 
         int ctok = 0;
 
-
         String slon;
         String slat;
         String svalor;
         String smarca;
-
 
         try {
 
             StringTokenizer st = new StringTokenizer(spar, ",|");
 
             ctok = st.countTokens();
-
 
             slon = st.nextToken();
 
@@ -131,7 +123,6 @@ public class LectorPC {
                 latitud = Double.parseDouble(slat);
             }
 
-
             svalor = st.nextToken();
 
             if (svalor.length() > 0 && svalor.charAt(0) != '#') {
@@ -144,14 +135,7 @@ public class LectorPC {
                 marca = Integer.parseInt(smarca);
             }
 
-        
-            
-            Dato daux = new Dato(longitud, latitud, valor, marca);
-            daux.radio = valor;
-            
-            aD.add(daux);
-
-
+            insertaDato(longitud, latitud, valor, marca);
 
         } catch (NumberFormatException nfex) {
 
@@ -161,5 +145,19 @@ public class LectorPC {
 
         return ctok;
 
+    }
+
+    /**
+     *
+     * @param longitud
+     * @param latitud
+     * @param valor
+     * @param marca
+     */
+    protected void insertaDato(double longitud, double latitud, float valor, int marca) {
+        Dato daux = new Dato(longitud, latitud, valor, marca);
+        daux.radio = valor;
+
+        aD.add(daux);
     }
 }
