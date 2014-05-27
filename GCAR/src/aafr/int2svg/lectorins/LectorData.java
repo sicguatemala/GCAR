@@ -14,7 +14,7 @@ import aafr.int2svg.jncartem.Const;
 
 /**
  *
- * Clase que lee un archivo de data en formato CSV
+ * Clase que lee un archivo de data en formato CSV, para 1 a 3 niveles
  *
  * @author alfonso
  *

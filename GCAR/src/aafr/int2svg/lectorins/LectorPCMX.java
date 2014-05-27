@@ -13,13 +13,12 @@ import java.util.ArrayList;
  */
 public class LectorPCMX extends LectorPC{
 
-    private AITRF2CCL ac;
+    private final AITRF2CCL ac;
  
     /**
      *
      * @param snomarch
      * @param adato
-     * @param midxml
      */
     public LectorPCMX(String snomarch, ArrayList<Dato> adato) {
         super(snomarch, adato);
@@ -35,6 +34,7 @@ public class LectorPCMX extends LectorPC{
      * @param valor
      * @param marca 
      */
+    @Override
     protected void insertaDato(double longitud, double latitud, float valor, int marca) {
         
         ac.Grados2PCCL(longitud, latitud);

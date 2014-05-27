@@ -14,7 +14,7 @@ import java.util.StringTokenizer;
  */
 public class LectorPC {
 
-    private String snomarch;
+    private final String snomarch;
     File farch = null;
     ArrayList<Dato> aD = null;
 
@@ -88,6 +88,7 @@ public class LectorPC {
      *
      * longitud,latitud,valor,marca
      *
+     * @param spar
      * @return La cantidad de tokens procesados
      */
     public int parsea(String spar) {
