@@ -14,7 +14,7 @@ public class Const {
     
     public static final int NIVEL_MULTI12 = 1;
     
-    public static final int CONCENTRACION1 = 2;
+    public static final int CONCENTRACION1 = 40;
     public static final int CONCENTRACION2 = 30;
     
     public static final int CAPAS2 = 20; // capas simples

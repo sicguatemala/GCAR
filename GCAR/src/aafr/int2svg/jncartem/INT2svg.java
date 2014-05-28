@@ -57,13 +57,9 @@ public class INT2svg {
                 miLecDG.leeDatos();
             } else {
 
-                if (midxml.indfiltro2 > 0) {
-                    LectorData miLecD = new LectorData(midxml.archivo_origen, midxml.aDatos, midxml.alcance_ce, 0);
-                    miLecD.leeDatos();
-                } else {
-                    LectorDataGN miLecDG = new LectorDataGN(midxml.archivo_origen, midxml.aDatos);
-                    miLecDG.leeDatos();
-                }
+                LectorData miLecD = new LectorData(midxml.archivo_origen, midxml.aDatos, midxml.alcance_ce, 0);
+                miLecD.leeDatos();
+
             }
         }
 
