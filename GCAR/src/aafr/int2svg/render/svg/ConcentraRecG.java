@@ -25,7 +25,7 @@ public class ConcentraRecG extends DibSVGG {
         this.escalaPoligonos(midxml.aPA);
 
         if (Const.BDEP) {
-            System.out.println("DEPURACION: ConcentraRecG2");
+            System.out.println("DEPURACION: ConcentraRecG");
         }
 
     }
