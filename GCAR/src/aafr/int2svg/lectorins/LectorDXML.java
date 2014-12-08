@@ -177,7 +177,7 @@ public class LectorDXML {
 
             dxml.sLocCoord = attrs[0].getValue();
 
-        } else if (qName.equals("anchol")) {
+        } else if (qName.equals("anchol")) { //ancho de lineas frontera
             double aux = Double.parseDouble(attrs[0].getValue());
             dxml.ancholin = (aux > 0) ? aux : 0.25;
 

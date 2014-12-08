@@ -346,9 +346,9 @@ public class DataXML {
     }
 
     /**
-     *
+     * Método que regresa el radio de acuerdo al rango  
      * @param rango
-     * @return
+     * @return 
      */
     public double rango2radio(int rango) {
 

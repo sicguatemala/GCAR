@@ -76,7 +76,7 @@ public class INT2svg {
         // Lector de Poligonos arbitrarios
         LectorINTA linta = new LectorINTA(midxml);
 
-//ordena poligonos del mayor al menor
+        // ordena poligonos del mayor al menor
         OrdenaPoligonosA(midxml.aPA);
 
         midxml.aesp = true;

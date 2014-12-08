@@ -115,7 +115,7 @@ public class AITRF2CCL {
     }
 
     /**
-     * Metodo que calcula Radianes a coordenadas de Lambert
+     * Método que calcula Radianes a coordenadas de Lambert
      *
      * @param longitud
      * @param latitud
