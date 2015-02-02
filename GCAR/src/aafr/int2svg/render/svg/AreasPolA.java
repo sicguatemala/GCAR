@@ -61,9 +61,16 @@ public class AreasPolA extends DibSVGG {
      */
     private void pintaPoligonos() throws IOException {
         int vtam = midxml.aPA.size();
+        
+        if(this.dxml.bpolpath){
         for (int i = 0; i < vtam; i++) {
 
             pintaPoligono(midxml.aPA.get(i));
+        }}else{
+            for (int i = 0; i < vtam; i++) {
+
+            pintaPath(midxml.aPA.get(i));
+        }
         }
     }
 
@@ -170,7 +177,7 @@ public class AreasPolA extends DibSVGG {
      * @param pola
      * @throws IOException
      */
-    private void pintaPoligono3(PoligonoA pola) throws IOException {
+    private void pintaPath(PoligonoA pola) throws IOException {
 
 
         String sid = "";

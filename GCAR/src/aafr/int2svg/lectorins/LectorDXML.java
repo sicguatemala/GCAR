@@ -314,6 +314,8 @@ public class LectorDXML {
                 dxml.subtipom = Const.REGIONAL;
             }
 
+        } else if (qName.equals("bpolpath")) {
+            dxml.bpolpath = (attrs[0].getValue().equalsIgnoreCase("t")) ? true : false;
         }
     }
 

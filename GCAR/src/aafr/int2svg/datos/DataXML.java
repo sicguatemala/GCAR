@@ -218,6 +218,11 @@ public class DataXML {
      */
     public String arch_rotulos;
 
+    
+    //boolean para indicar si se pintan poligonos o paths
+    public boolean bpolpath;
+    
+    
     /**
      * Crea una nueva instancia de DataXML
      *
@@ -264,10 +269,10 @@ public class DataXML {
         bescalado = false;
 
         //crea los vectores para acumular la informacion
-        aDatos = new ArrayList<Dato>();
+        aDatos = new ArrayList<>();
 
-        aPA = new ArrayList<PoligonoA>();
-        aPA2 = new ArrayList<PoligonoA>();
+        aPA = new ArrayList<>();
+        aPA2 = new ArrayList<>();
 
         sna_estilo_svg = new String();
 
@@ -284,6 +289,8 @@ public class DataXML {
         this.spath_script = new String();
 
         this.bembebido = true;
+        
+        this.bpolpath=true;
     }
 
     /**
