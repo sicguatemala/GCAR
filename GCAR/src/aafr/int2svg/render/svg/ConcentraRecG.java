@@ -65,10 +65,6 @@ public class ConcentraRecG extends DibSVGG {
     void pintaPoligonoA() throws IOException {
         int atam = midxml.aPA.size();
 
-//        for (int i = 0; i < atam; i++) {
-//            this.pintaPoligono2(midxml.aPA.get(i));
-//
-//        }
         if (!midxml.bpolpath) {
             for (int i = 0; i < atam; i++) {
                 
@@ -135,6 +131,9 @@ public class ConcentraRecG extends DibSVGG {
         int xa = pola.xpoints[0];
         int ya = pola.ypoints[0];
 
+        int xant=xa;
+        int yant=ya;
+        
         fbwp.write(xa + "," + ya);
 
         i++;
@@ -144,8 +143,13 @@ public class ConcentraRecG extends DibSVGG {
             xa = pola.xpoints[i];
             ya = pola.ypoints[i];
 
+            if(xant!=xa || yant!=ya){
             fbwp.write(" " + xa + "," + ya);
 
+                xant=xa;
+                yant=ya;
+            }
+            
             i++;
 
             if (i == pola.npoints) {
@@ -166,7 +170,7 @@ public class ConcentraRecG extends DibSVGG {
      */
     private void pintaPath(PoligonoA pola) throws IOException {
 
-        String sid = "";
+        String sid = (pola.sdatos.get(midxml.indfiltro1)).trim();
         String strans = "";
 
         Double dnivel = Double.parseDouble((pola.sdatos.get(midxml.indfiltro1)).trim());
@@ -184,6 +188,10 @@ public class ConcentraRecG extends DibSVGG {
 
         int xa = pola.xpoints[0];
         int ya = pola.ypoints[0];
+        
+        
+        int xant=xa;
+        int yant=ya;
 
         fbwp.write("M " + xa + "," + ya);
 
@@ -194,17 +202,23 @@ public class ConcentraRecG extends DibSVGG {
             xa = pola.xpoints[i];
             ya = pola.ypoints[i];
 
-            fbwp.write(" L" + xa + "," + ya);
+            if(xa!=xant || ya!=yant){
+                fbwp.write(" L" + xa + "," + ya);
+                xant=xa;
+                yant=ya;
+            }
+            
+            
 
             i++;
-
+            
             if (i == pola.npoints) {
                 break;
             }
 
         }
 
-        fbwp.write(" z \"/>");
+        fbwp.write(" z \"/>\n");
 
     }
     
