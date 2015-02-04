@@ -51,7 +51,6 @@ public class AreasPolA extends DibSVGG {
             Logger.getLogger(AreasPolA.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-
         return true;
     }
 
@@ -61,16 +60,17 @@ public class AreasPolA extends DibSVGG {
      */
     private void pintaPoligonos() throws IOException {
         int vtam = midxml.aPA.size();
-        
-        if(this.dxml.bpolpath){
-        for (int i = 0; i < vtam; i++) {
 
-            pintaPoligono(midxml.aPA.get(i));
-        }}else{
+        if (this.dxml.bpolpath) {
             for (int i = 0; i < vtam; i++) {
 
-            pintaPath(midxml.aPA.get(i));
-        }
+                pintaPoligono(midxml.aPA.get(i));
+            }
+        } else {
+            for (int i = 0; i < vtam; i++) {
+
+                pintaPath(midxml.aPA.get(i));
+            }
         }
     }
 
@@ -80,7 +80,6 @@ public class AreasPolA extends DibSVGG {
      * @throws IOException
      */
     protected void pintaPoligono(PoligonoA pola) throws IOException {
-
 
         Rectangle2D rec2d = pola.getBounds2D();
         double dims = rec2d.getHeight() * rec2d.getWidth();
@@ -92,30 +91,30 @@ public class AreasPolA extends DibSVGG {
         //String suidpol = (pola.sdatos.get(midxml.indfiltro1)).trim();
         String strans = "";
 
-
         Colorc color;
         Double dnivel1 = 0.0;
-        Double dnivel2= 0.0;
-        
+        Double dnivel2 = 0.0;
+
         if (midxml.besalfan) {
-            
+
             int icolor = midxml.obtenRango((pola.sdatos.get(midxml.indfiltro1)).trim());
             color = midxml.rango2color(icolor);
-            System.out.println("filtro: "+midxml.indfiltro1+" valor: "+pola.sdatos.get(midxml.indfiltro1).trim()+" icolor: "+icolor+ " color: "+color);
+            System.out.println("filtro: " + midxml.indfiltro1 + " valor: " + pola.sdatos.get(midxml.indfiltro1).trim() + " icolor: " + icolor + " color: " + color);
         } else {
-                                  
+
             dnivel1 = Double.parseDouble((pola.sdatos.get(midxml.indfiltro1)).trim());
-            
-            if(midxml.indfiltro2>0){
-                dnivel2 =Double.parseDouble((pola.sdatos.get(midxml.indfiltro2)).trim());
+
+            if (midxml.indfiltro2 > 0) {
+                dnivel2 = Double.parseDouble((pola.sdatos.get(midxml.indfiltro2)).trim());
             }
-                        
+
             int icolor = midxml.obtenRango(dnivel1.intValue(), dnivel2.intValue());
             color = midxml.rango2color(icolor);
-            
-            if(Const.BDEP)System.out.println("ce: "+dnivel1.intValue()+" cm: "+dnivel2.intValue()+" icolor: "+icolor);
-        }
 
+            if (Const.BDEP) {
+                System.out.println("ce: " + dnivel1.intValue() + " cm: " + dnivel2.intValue() + " icolor: " + icolor);
+            }
+        }
 
         String satteve = "";
         if (midxml.bscript) {
@@ -142,10 +141,8 @@ public class AreasPolA extends DibSVGG {
 
         fbwp.write(xa + "," + ya);
 
-
         int xant = xa;
         int yant = ya;
-
 
         i++;
 
@@ -178,7 +175,6 @@ public class AreasPolA extends DibSVGG {
      * @throws IOException
      */
     private void pintaPath(PoligonoA pola) throws IOException {
-
 
         String sid = "";
         String strans = "";
@@ -257,8 +253,6 @@ public class AreasPolA extends DibSVGG {
             }
         }
 
-
-
         return sbuff;
     }
 
@@ -268,7 +262,7 @@ public class AreasPolA extends DibSVGG {
      * @return
      */
     private String formateaValor(double valor) {
-        int valor_e = Math.round((float)valor);
+        int valor_e = Math.round((float) valor);
 
         if (valor_e == (int) valor) {
             return (new Integer(valor_e)).toString();

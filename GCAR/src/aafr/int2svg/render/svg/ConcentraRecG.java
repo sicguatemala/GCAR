@@ -65,9 +65,20 @@ public class ConcentraRecG extends DibSVGG {
     void pintaPoligonoA() throws IOException {
         int atam = midxml.aPA.size();
 
-        for (int i = 0; i < atam; i++) {
-            this.pintaPoligono2(midxml.aPA.get(i));
-
+//        for (int i = 0; i < atam; i++) {
+//            this.pintaPoligono2(midxml.aPA.get(i));
+//
+//        }
+        if (!midxml.bpolpath) {
+            for (int i = 0; i < atam; i++) {
+                
+                pintaPath(midxml.aPA.get(i));
+            }
+        } else {
+            for (int i = 0; i < atam; i++) {
+                
+                this.pintaPoligono2(midxml.aPA.get(i));
+            }
         }
     }
 
@@ -146,6 +157,57 @@ public class ConcentraRecG extends DibSVGG {
         fbwp.write("\"/>");
     }
 
+    
+    
+     /**
+     *
+     * @param pola
+     * @throws IOException
+     */
+    private void pintaPath(PoligonoA pola) throws IOException {
+
+        String sid = "";
+        String strans = "";
+
+        Double dnivel = Double.parseDouble((pola.sdatos.get(midxml.indfiltro1)).trim());
+
+        Colorc color = this.obtenColorRango(midxml.obtenRango(dnivel.intValue(), 0));
+
+        fbwp.write("<path ");
+        fbwp.write("fill=\"rgb(" + color + ")\"  width=\"0.25\" fill-rule=\"nonzero\" " + strans);
+
+        fbwp.write(" id=\"i" + sid + "\"");
+
+        fbwp.write(" d=\"");
+
+        int i = 0;
+
+        int xa = pola.xpoints[0];
+        int ya = pola.ypoints[0];
+
+        fbwp.write("M " + xa + "," + ya);
+
+        i++;
+
+        while (true) {
+
+            xa = pola.xpoints[i];
+            ya = pola.ypoints[i];
+
+            fbwp.write(" L" + xa + "," + ya);
+
+            i++;
+
+            if (i == pola.npoints) {
+                break;
+            }
+
+        }
+
+        fbwp.write(" z \"/>");
+
+    }
+    
     /**
      * 
      * @param dat
