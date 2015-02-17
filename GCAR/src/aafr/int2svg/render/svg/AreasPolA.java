@@ -63,7 +63,7 @@ public class AreasPolA extends DibSVGG {
         int vtam = midxml.aPA.size();
         for (int i = 0; i < vtam; i++) {
 
-            pintaPoligono(midxml.aPA.get(i));
+            pintaPoligono3(midxml.aPA.get(i));
         }
     }
 
