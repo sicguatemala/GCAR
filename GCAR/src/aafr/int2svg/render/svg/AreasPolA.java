@@ -186,7 +186,7 @@ public class AreasPolA extends DibSVGG {
         int xant=xa;
         int yant=ya;
 
-        fbwp.write("M " + xa + "," + ya);
+        fbwp.write("M " + xa + "," + ya+ " C");
 
         i++;
 
@@ -196,7 +196,7 @@ public class AreasPolA extends DibSVGG {
             ya = pola.ypoints[i];
 
             if(xant!=xa || yant!=ya){
-            fbwp.write(" L" + xa + "," + ya);
+            fbwp.write(" " + xa + "," + ya);
             xant=xa;
             yant=ya;
             }
@@ -209,7 +209,7 @@ public class AreasPolA extends DibSVGG {
 
         }
 
-        fbwp.write(" z \"/>");
+        fbwp.write(" z\"/>");
 
     }
 
